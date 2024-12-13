@@ -7,7 +7,6 @@ def Insection_sort(a_list):
             a_list[hole] = a_list[hole - 1]
             hole -= 1
         a_list[hole] = temp
-
     return a_list
 
 a = [4, 7, 9, 2, 6, 8, 9, 4, 7, 9, 2, 6, 8, 9, 1]
