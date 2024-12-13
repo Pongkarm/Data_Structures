@@ -1,3 +1,5 @@
+import timeit
+start_time = timeit.default_timer()
 a = [4, 7, 9, 2, 6, 8, 9, 4, 7, 9, 2, 6, 8, 9, 1]
 
 def Bubble_sort(a_list):
@@ -15,3 +17,6 @@ def Bubble_sort(a_list):
 
 print(a)
 print(Bubble_sort(a))
+
+elapsed = timeit.default_timer() - start_time
+print(f"{elapsed} seconds")

@@ -1,3 +1,5 @@
+import timeit
+start_time = timeit.default_timer()
 def Selection_sort(a_list):
     n = len(a_list)
     for i in range(n):
@@ -15,4 +17,7 @@ print("Sorted list:", sorted_list)
 
 print(a)
 print(Selection_sort(a))
+
+elapsed = timeit.default_timer() - start_time
+print(f"{elapsed} seconds")
 

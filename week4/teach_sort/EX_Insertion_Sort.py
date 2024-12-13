@@ -1,3 +1,5 @@
+import timeit
+start_time = timeit.default_timer()
 def Insection_sort(a_list):
     n = len(a_list)
     flag = 1
@@ -19,3 +21,6 @@ print("Sorted list:", sorted_list)
 
 print(a)
 print(Insection_sort(a))
+
+elapsed = timeit.default_timer() - start_time
+print(f"{elapsed} seconds")
