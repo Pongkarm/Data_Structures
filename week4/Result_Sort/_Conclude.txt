@@ -1,0 +1,30 @@
+นับแค่ความเร็วไม่ได้นับว่าใช้ความจำเท่าไหร่
+#วิธี Bubble_sort (5)
+#amphoe ประมาณ 0.1 วินาที
+#province ประมาณ 0.006 วินาที
+#tambol ประมาณ 3.2 วินาที
+#mm ประมาณ 1.5 วินาที
+
+#วิธี lnsertion (4)
+#amphoe ประมาณ 0.02 วินาที
+#province ประมาณ 0.0008 วินาที
+#tambol ประมาณ 2.3 วินาที
+#mm ประมาณ 1.3 วินาที
+
+#วิธี Selection (3)
+#amphoe ประมาณ 0.019 วินาที
+#province ประมาณ 0.0006 วินาที
+#tambol ประมาณ 1.2 วินาที
+#mm ประมาณ 0.69 วินาที
+
+#วิธี Merge (1)
+#amphoe ประมาณ 0.002 วินาที
+#province ประมาณ 0.0001 วินาที
+#tambol ประมาณ 0.01 วินาที
+#mm ประมาณ 0.013 วินาที
+
+#วิธี Quilc (2)
+#amphoe ประมาณ 0.017 วินาที
+#province ประมาณ 0.0008 วินาที
+#tambol ประมาณ ---  maximum recursion depth exceeded
+#mm ประมาณ ---   maximum recursion depth exceeded
