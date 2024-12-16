@@ -11,14 +11,11 @@
 # print(a)
 # print(Bubble_sort(a))
 
-def pongkarm(a, sum = 0):
-    new = a*a-1
-    sum = sum + new
-    if a != 1:
-        a -= 1
-        print(sum, a)
-        pongkarm(a, sum)
+def factorial_recursive(n):
+    if n == 0 or n == 1:  # กรณีฐาน (base case)
+        return 1
     else:
-        print('end')
-        
-pongkarm(5)
+        return n * factorial_recursive(n - 1)  # เรียกฟังก์ชันซ้ำโดยลด n ลง 1
+
+# ตัวอย่างการเรียกใช้
+print(factorial_recursive(5))  # ผลลัพธ์: 120
