@@ -19,8 +19,9 @@
 # คันที่ 2: Volvo เคลื่อนที่ด้วยความเร็ว 10km/hr. ระยะเวลา 5 hrs. และมีอัตราค่าโดยสาร 1 km / 7 บาท
 # สั่งคำนวณและแสดงค่าโดยสารรวมที่เกิดขึ้นและระยะทางสะสมของรถทั้ง 2 คัน
 
+# step 1
 class Vehicle:
-    def __init__(self, brand, speed, mileage):
+    def __init__(self, brand='', speed=0, mileage=0):
         self.brand = brand
         self.speed = speed
         self.mileage = mileage
@@ -30,4 +31,56 @@ class Vehicle:
     def where(self):
         print(f'Now mileage is {self.mileage}')
     def move(self, time):
-        pass
+        self.mileage += time * self.speed
+
+# step2
+class Bus(Vehicle):
+    def __init__(self, brand='', speed=0, mileage=0, bus_number= '', seating_capacity=0):
+        super().__init__(brand, speed, mileage)
+        self.bus_number = bus_number
+        self.seating_capacity = seating_capacity
+
+# step3
+def fare(mileage, money):
+    return mileage * money
+
+
+
+# step1
+# if __name__ == '__main__':        
+#     car1 = Vehicle('Kond')
+#     car1.speed = 5 
+#     car1.where()
+#     car1.move(2)
+#     car1.where()
+#     car1.move(6)
+#     car1.where()
+#     car1.reset()
+#     car1.where()
+
+
+# step2
+# if __name__ == '__main__':        
+#     car1 = Bus('Pongkarm')
+#     car1.speed = 30
+#     car1.bus_number = 'A01X'
+#     car1.seating_capacity = 15
+#     car1.where()
+#     car1.move(2)
+#     print(car1.bus_number)
+#     car1.where()
+
+# step3
+if __name__ == '__main__':        
+    car1 = Bus('Pongkarm')
+    car1.speed = 30
+    car1.bus_number = 'A01X'
+    car1.seating_capacity = 15
+    car1.where()
+    car1.move(2)
+    print(fare(car1.mileage, 5))
+    car2 = Bus('Kong')
+    car2.speed = 10
+    car2.bus_number = 'A02X'
+    car2.move(5)
+    print(fare(car2.mileage, 7))
