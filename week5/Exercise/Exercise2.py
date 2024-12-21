@@ -48,3 +48,34 @@ print(isMatchingParentheses(expression1))  # Output: Correct Format
 print(isMatchingParentheses(expression2))  # Output: Incorrect Format
 
 #form chat GPT
+
+
+def check_parentheses(expression):
+    stack = Stack()
+    # Dictionary to map closing to opening parentheses
+    matching = {')': '(', ']': '[', '}': '{'}
+    
+    for char in expression:
+        if char in "({[":
+            stack.push(char)  # Push opening parentheses to the stack
+        elif char in ")}]":
+            if stack.isEmpty():
+                print("Incorrect Format")
+                return
+            top = stack.pop()
+            if matching[char] != top:
+                print("Incorrect Format")
+                return
+
+    # If the stack is empty after processing the expression, it's correct
+    if stack.isEmpty():
+        print("Correct Format")
+    else:
+        print("Incorrect Format")
+
+if __name__ == "__main__":
+    print("\n\n")
+    check_parentheses("{3+[(6-2)]}")
+    print("\n\n")
+
+#form Teacher
