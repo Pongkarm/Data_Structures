@@ -1,4 +1,4 @@
-from week5.Teach_code.Stack import Stack 
+from Stack import Stack 
 
 stack = Stack()
 
@@ -19,3 +19,5 @@ print(len(stack))    # Output: 1
 
 # เช็คว่า Stack ว่างไหม
 print(stack.isEmpty())  # Output: False
+
+#form Chat GPT
