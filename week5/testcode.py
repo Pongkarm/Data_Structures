@@ -36,3 +36,38 @@
             #     self.move_left()
             #     stack.push('p')
             # return stack
+
+
+    # stack.push(pk.ply)
+    # def lookway(self,stack):
+    #     if self.maze[self.ply.y-1][self.ply.x] != "X" and stack.peek().y != pk.ply.y-1 :
+    #         stack.push(self.ply)
+    #         self.move_up()
+    #     elif self.maze[self.ply.y+1][self.ply.x] != "X" and stack.peek().y != pk.ply.y+1 :
+    #         stack.push(self.ply)
+    #         self.move_down()
+    #     elif self.maze[self.ply.y][self.ply.x+1] != "X" and stack.peek().x != pk.ply.x+1 :
+    #         stack.push(self.ply)
+    #         self.move_right()
+    #     elif self.maze[pk.ply.y][self.ply.x-1] != "X" and stack.peek().x != pk.ply.x-1:
+    #         stack.push(self.ply)
+    #         self.move_left()
+    #     else:
+    #         stack.pop()
+
+
+#  def lookway(self,stack):
+#         if self.maze[self.ply.y-1][self.ply.x] != "X" and stack.peek() != 'o' :
+#             stack.push('o')
+#             self.move_up()
+#         elif self.maze[self.ply.y+1][self.ply.x] != "X" and stack.peek()!= 'o' :
+#             stack.push('o')
+#             self.move_down()
+#         elif self.maze[self.ply.y][self.ply.x+1] != "X" and stack.peek()!= 'o' :
+#             stack.push('o')
+#             self.move_right()
+#         elif self.maze[pk.ply.y][self.ply.x-1] != "X" and stack.peek()!= 'o':
+#             stack.push('o')
+#             self.move_left()
+#         else:
+#             pass

@@ -9,16 +9,29 @@ from Stack import Stack
 
 class maze:
     def __init__(self) -> None:
+        # self.maze = [
+        #             ["X", "X", "X", "X", "X", "X", "X"],
+        #             ["X", " ", " ", " ", "X", " ", "X"],
+        #             ["X", " ", "X", " ", "X", " ", " "],
+        #             ["X", " ", "X", " ", "X", " ", "X"],
+        #             ["X", " ", "X", " ", " ", " ", "X"],
+        #             ["X", " ", "X", "X", "X", "X", "X"],
+        #             ]
         self.maze = [
                     ["X", "X", "X", "X", "X", "X", "X"],
                     ["X", " ", " ", " ", "X", " ", "X"],
-                    ["X", " ", "X", " ", "X", " ", " "],
+                    ["X", " ", "X", " ", "X", " ", "X"],
                     ["X", " ", "X", " ", "X", " ", "X"],
                     ["X", " ", "X", " ", " ", " ", "X"],
+                    ["X", " ", "X", " ", "X", " ", " "],
+                    ["X", " ", "X", " ", "X", " ", "X"],
+                    ["X", "X", "X", " ", "X", " ", "X"],
+                    ["X", " ", " ", " ", "X", " ", "X"],
+                    ["X", " ", "X", " ", "X", " ", "X"],
                     ["X", " ", "X", "X", "X", "X", "X"],
                     ]
-        self.ply = pos(5, 1)
-        self.end = pos(2, 6)
+        self.ply = pos(10, 1)
+        self.end = pos(5, 6)
         self.maze[self.ply.y][self.ply.x] = "P"
         self.maze[self.end.y][self.end.x] = "E"
     #เช็คว่าอยู่ในบอร์ดอยู่หรือเปล่า
@@ -100,17 +113,20 @@ class maze:
         if self.maze[self.ply.y-1][self.ply.x] != "X" and stack.peek().y != pk.ply.y-1 :
             stack.push(self.ply)
             self.move_up()
-        elif self.maze[self.ply.y+1][self.ply.x] != "X" and stack.peek().y != pk.ply.y+1 :
-            stack.push(self.ply)
-            self.move_down()
-        elif self.maze[self.ply.y][self.ply.x+1] != "X" and stack.peek().x != pk.ply.x+1 :
-            stack.push(self.ply)
-            self.move_right()
         elif self.maze[pk.ply.y][self.ply.x-1] != "X" and stack.peek().x != pk.ply.x-1:
             stack.push(self.ply)
             self.move_left()
+        elif self.maze[self.ply.y][self.ply.x+1] != "X" and stack.peek().x != pk.ply.x+1 :
+            stack.push(self.ply)
+            self.move_right()
+        elif self.maze[self.ply.y+1][self.ply.x] != "X" and stack.peek().y != pk.ply.y+1 :
+            stack.push(self.ply)
+            self.move_down()
         else:
             stack.pop()
+            
+
+            
 
             
         return stack
@@ -130,6 +146,7 @@ if __name__ == '__main__':
         if keyboard.is_pressed("enter"):
             pk.print()
             break
+
     stack.push(pk.ply)
     while True:
         if keyboard.is_pressed("q"):
