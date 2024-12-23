@@ -84,3 +84,4 @@ if __name__ == '__main__':
     car2.bus_number = 'A02X'
     car2.move(5)
     print(fare(car2.mileage, 7))
+#by Pongkarm
