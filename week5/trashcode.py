@@ -71,3 +71,35 @@
 #             self.move_left()
 #         else:
 #             pass
+
+    # def lookway(self,stack):
+    #     if self.maze[self.ply.y-1][self.ply.x] != "X" and self.maze[self.ply.y-1][self.ply.x] != 'o' and self.maze[self.ply.y-1][self.ply.x] != 'i':
+    #         stack.push('i')
+    #         self.move_up()
+    #     elif self.maze[pk.ply.y][self.ply.x-1] != "X" and self.maze[self.ply.y][self.ply.x-1] != 'o'and self.maze[self.ply.y][self.ply.x-1] != 'i':
+    #         stack.push('i')
+    #         self.move_left()
+    #     elif self.maze[self.ply.y][self.ply.x+1] != "X" and self.maze[self.ply.y][self.ply.x+1] != 'o' and self.maze[self.ply.y][self.ply.x+1] != 'i':
+    #         stack.push('i')
+    #         self.move_right()
+    #     elif self.maze[self.ply.y+1][self.ply.x] != "X" and self.maze[self.ply.y+1][self.ply.x] != 'o' and self.maze[self.ply.y+1][self.ply.x] != 'i':
+    #         stack.push('i')
+    #         self.move_down()
+    #     else:
+    #         if self.maze[self.ply.y-1][self.ply.x] == 'i' or self.maze[self.ply.y-1][self.ply.x] == 'E':
+    #             next_move = pos(self.ply.y-1, self.ply.x)
+    #             self.maze[next_move.y][next_move.x] = 'P'
+    #             self.maze[self.ply.y][self.ply.x] = 'o'
+    #         elif self.maze[pk.ply.y][pk.ply.x-1] == 'i' or self.maze[pk.ply.y][pk.ply.x-1] == 'E':
+    #             next_move = pos(self.ply.y, self.ply.x-1)
+    #             self.maze[next_move.y][next_move.x] = 'P'
+    #             self.maze[pk.ply.y][pk.ply.x] = 'o'
+    #         elif self.maze[pk.ply.y][pk.ply.x+1] == 'i' or self.maze[pk.ply.y][pk.ply.x+1] == 'E':
+    #             next_move = pos(self.ply.y, self.ply.x+1)
+    #             self.maze[next_move.y][next_move.x] = 'P'
+    #             self.maze[pk.ply.y][pk.ply.x] = 'o'
+    #         elif self.maze[pk.ply.y+1][pk.ply.x] == 'i' or self.maze[pk.ply.y+1][pk.ply.x] == 'E':
+    #             next_move = pos(self.ply.y+1, self.ply.x)
+    #             self.maze[next_move.y][next_move.x] = 'P'
+    #             self.maze[pk.ply.y
+    #                       ][pk.ply.x] = 'o'
