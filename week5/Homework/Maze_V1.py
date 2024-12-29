@@ -110,20 +110,35 @@ class maze:
         return True
 
     def lookway(self,stack):
-        if self.maze[self.ply.y-1][self.ply.x] != "X" and stack.peek().y != pk.ply.y-1 :
-            stack.push(self.ply)
-            self.move_up()
-        elif self.maze[pk.ply.y][self.ply.x-1] != "X" and stack.peek().x != pk.ply.x-1:
-            stack.push(self.ply)
+        if self.maze[pk.ply.y][self.ply.x-1] != "X" and stack.peek().x != pk.ply.x-1:
+            stack.push(pk.ply)
             self.move_left()
+        elif self.maze[self.ply.y-1][self.ply.x] != "X" and stack.peek().y != pk.ply.y-1 :
+            stack.push(pk.ply)
+            self.move_up()
         elif self.maze[self.ply.y][self.ply.x+1] != "X" and stack.peek().x != pk.ply.x+1 :
-            stack.push(self.ply)
+            stack.push(pk.ply)
             self.move_right()
         elif self.maze[self.ply.y+1][self.ply.x] != "X" and stack.peek().y != pk.ply.y+1 :
-            stack.push(self.ply)
+            stack.push(pk.ply)
             self.move_down()
         else:
             stack.pop()
+            if self.maze[pk.ply.y][self.ply.x-1] != "X" and stack.peek().x != pk.ply.x-1:
+                self.move_left()
+                self.maze[pk.ply.y][self.ply.x+1] = "X"
+            elif self.maze[self.ply.y-1][self.ply.x] != "X" and stack.peek().y != pk.ply.y-1 :
+                self.move_up()
+                self.maze[self.ply.y+1][self.ply.x] = "X"
+            elif self.maze[self.ply.y][self.ply.x+1] != "X" and stack.peek().x != pk.ply.x+1 :
+                self.move_right()
+                self.maze[self.ply.y][self.ply.x-1] = "X"
+            elif self.maze[self.ply.y+1][self.ply.x] != "X" and stack.peek().y != pk.ply.y+1 :
+                self.move_down()
+                self.maze[self.ply.y-1][self.ply.x] = "X"
+        
+        
+            
             
 
             
