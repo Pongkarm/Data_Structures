@@ -188,6 +188,7 @@ class pos:
         self.x = x
 
 #no stack
+#ออกด้วยวิธีการทำสัญลักษณ์บนแผนที่
 if __name__ == '__main__':
 
     pk = maze()
