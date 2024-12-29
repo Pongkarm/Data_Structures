@@ -103,3 +103,25 @@
     #             self.maze[next_move.y][next_move.x] = 'P'
     #             self.maze[pk.ply.y
     #                       ][pk.ply.x] = 'o'
+    
+    # git conflict resolve
+    #bug look way
+    #
+    
+# class Animal:
+#     def __init__(self, name):
+#         self.name = name
+        
+#     def speak(self):
+#         return 'i am kuy'
+    
+# class Dog(Animal):
+#     def speak(self):
+#         return 'woof woof'
+    
+# my_pet = Dog()
+# print(my_pet.speak())
+
+arr = [3,5,6,7]
+arr = arr.sort()
+print(arr.sort())
