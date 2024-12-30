@@ -209,6 +209,6 @@ if __name__ == '__main__':
         stack = pk.go_to_way(stack, way)
         pk.print()
         time.sleep(0.1)
-
+#not success
 #bug look way
 #No chat GPT !!!!!!!!!!!
