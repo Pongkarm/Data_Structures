@@ -137,13 +137,6 @@ class maze:
                 self.move_down()
                 self.maze[self.ply.y-1][self.ply.x] = "X"
         
-        
-            
-            
-
-            
-
-            
         return stack
 #class pos ผมขอแก้ใขให้ดูง่ายขคี้นกว่าเดิมนะครับ
 class pos: 
@@ -168,7 +161,6 @@ if __name__ == '__main__':
             print("Quit Program")
             break
         stack = pk.lookway(stack)
-    
         pk.print()
         time.sleep(0.1)
 
