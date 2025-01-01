@@ -135,7 +135,7 @@ class maze:
         if self.maze[self.ply.y-1][self.ply.x] != "X" and self.maze[self.ply.y-1][self.ply.x] != 'o' and self.maze[self.ply.y-1][self.ply.x] != 'i':
             way = 1
         #left
-        elif self.maze[pk.ply.y][self.ply.x-1] != "X" and self.maze[self.ply.y][self.ply.x-1] != 'o'and self.maze[self.ply.y][self.ply.x-1] != 'i':
+        elif self.maze[self.ply.y][self.ply.x-1] != "X" and self.maze[self.ply.y][self.ply.x-1] != 'o'and self.maze[self.ply.y][self.ply.x-1] != 'i':
             way = 2
         #right
         elif self.maze[self.ply.y][self.ply.x+1] != "X" and self.maze[self.ply.y][self.ply.x+1] != 'o' and self.maze[self.ply.y][self.ply.x+1] != 'i':
@@ -148,16 +148,16 @@ class maze:
         return stack, way
     def go_to_way(self,stack, way):
         if way == 1:
-            pk.move_up()
+            self.move_up()
             stack.push('p')
         elif way == 2:
-            pk.move_left()
+            self.move_left()
             stack.push('p')
         elif way == 3:
-            pk.move_right()
+            self.move_right()
             stack.push('p')
         elif way == 4:
-            pk.move_down()
+            self.move_down()
             stack.push('p')
         elif way == 5:
             #return way
@@ -167,7 +167,7 @@ class maze:
                 self.maze[self.ply.y][self.ply.x] = "o"
                 self.maze[next_move.y][next_move.x] = "P"
                 self.ply = next_move
-            elif self.maze[pk.ply.y][self.ply.x-1] == "i" or self.maze[self.ply.y][self.ply.x-1] == 'E':
+            elif self.maze[self.ply.y][self.ply.x-1] == "i" or self.maze[self.ply.y][self.ply.x-1] == 'E':
                 next_move = pos(self.ply.y, self.ply.x-1)
                 self.maze[self.ply.y][self.ply.x] = "o"
                 self.maze[next_move.y][next_move.x] = "P"
