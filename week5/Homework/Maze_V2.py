@@ -146,7 +146,7 @@ class maze:
                 way = 2
                 return stack, way
         #right
-        if ply_x < len_maze_x-1:
+        if ply_x < len_maze_x-1: #ตรวจว่าแถวมีพอที่จะ +1 y หรือเปล่า ป้องกันerror จากการเลย // -1 len เพราะเอาตำแหน่งเอาเทียบกับจำนวน ซึ่งมันนับไม่เหมือนกัน หาตำแหน่งเริ่มจาก 0 แต่นับจำนวนนับจาก 1 เลยต้อง -1 ให้พอดีกัน
             if self.maze[self.ply.y][self.ply.x+1] != "X" and self.maze[self.ply.y][self.ply.x+1] != 'o' and self.maze[self.ply.y][self.ply.x+1] != 'i':
                 way = 3
                 return stack, way
