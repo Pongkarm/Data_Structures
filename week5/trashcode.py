@@ -299,3 +299,129 @@
 #         time.sleep(0.1)
 
 # #เดินซ้ายอย่างเดียว no stack mark in map
+
+import os
+import time
+import keyboard
+from Stack import Stack
+
+class maze:
+    def __init__(self) -> None:
+        self.maze = [
+            ["X", "X", "X", "X", "X", "X", "X", " ", "X"],
+            ["X", " ", " ", " ", "X", " ", "X", " ", "X"],
+            ["X", " ", "X", " ", " ", " ", "X", " ", "X"],
+            ["X", " ", "X", " ", "X", " ", "X", " ", "X"],
+            ["X", " ", " ", " ", "X", " ", "X", " ", "X"],
+            ["X", " ", "X", " ", "X", " ", "X", " ", "X"],
+            ["X", " ", "X", " ", "X", " ", "X", " ", "X"],
+            ["X", " ", "X", " ", "X", " ", "X", " ", "X"],
+            ["X", " ", " ", " ", "X", " ", " ", " ", "X"],
+            ["X", " ", "X", " ", " ", " ", "X", " ", "X"],
+            ["X", " ", "X", "X", "X", "X", "X", "X", "X"],
+        ]
+        self.ply = pos(10, 1)
+        self.end = pos(0, 7)
+        self.maze[self.ply.y][self.ply.x] = "P"
+        self.maze[self.end.y][self.end.x] = "E"
+
+    def isInBound(self, y, x):
+        return 0 <= y < len(self.maze) and 0 <= x < len(self.maze[0])
+
+    def print(self):
+        os.system("cls")
+        print("\n\n\n")
+        for row in self.maze:
+            print(" ".join(row))
+        print("\n\n\n")
+
+    def printEND(self):
+        os.system("cls")
+        print("\n\n\n")
+        print(">>>>> Congraturation!!! <<<<<")
+        print("\n\n\n")
+        keyboard.wait("")
+
+    def move(self, dy, dx):
+        next_move = pos(self.ply.y + dy, self.ply.x + dx)
+        if self.isInBound(next_move.y, next_move.x):
+            if self.maze[next_move.y][next_move.x] == "E":
+                self.printEND()
+                return False
+            if self.maze[next_move.y][next_move.x] != "X":
+                self.maze[self.ply.y][self.ply.x] = " "
+                self.maze[next_move.y][next_move.x] = "P"
+                self.ply = next_move
+                time.sleep(0.25)
+        return True
+
+    def lookway(self, stack):
+        way = 0
+        directions = [(-1, 0), (1, 0), (0, -1), (0, 1)]
+        for dy, dx in directions:
+            ny, nx = self.ply.y + dy, self.ply.x + dx
+            if self.isInBound(ny, nx):
+                if (self.maze[ny][nx] == " " or self.maze[ny][nx] == "E") and (stack.is_empty() or pos(ny, nx) != stack.peek()):
+                    way += 1
+        return way
+
+    def one_way(self, stack, time):
+        directions = [(-1, 0), (0, -1), (0, 1), (1, 0)]
+        for dy, dx in directions:
+            ny, nx = self.ply.y + dy, self.ply.x + dx
+            if self.isInBound(ny, nx):
+                if (self.maze[ny][nx] == " " or self.maze[ny][nx] == "E") and (stack.is_empty() or pos(ny, nx) != stack.peek()):
+                    stack.push(self.ply)
+                    self.move(dy, dx)
+                    break
+        time += 1
+        return stack, time
+
+    def go_to_way(self, way, stack, time):
+        if way == 1:
+            stack, time = self.one_way(stack, time)
+        elif way == 0:
+            if not stack.is_empty():
+                self.maze[self.ply.y][self.ply.x] = " "
+                self.ply = stack.pop()
+            else:
+                print("No more paths available. Exiting...")
+                exit()
+        return stack, time
+
+class pos:
+    def __init__(self, y=None, x=None):
+        self.y = y
+        self.x = x
+
+    def __eq__(self, other):
+        return self.y == other.y and self.x == other.x
+
+# Main Program
+if __name__ == '__main__':
+    pk = maze()
+    stack = Stack()
+    _time = 0
+    print('Press Enter to start')
+    while True:
+        if keyboard.is_pressed("enter"):
+            pk.print()
+            break
+    stack.push(pk.ply)
+    while True:
+        if keyboard.is_pressed("q"):
+            print("Quit Program")
+            break
+        way = pk.lookway(stack)
+        stack, _time = pk.go_to_way(way, stack, _time)
+        pk.print()
+        print(f"Time: {_time}, Stack size: {len(stack)}")
+        time.sleep(0.4)
+
+
+
+
+
+
+
+# git reset --soft HEAD~1
