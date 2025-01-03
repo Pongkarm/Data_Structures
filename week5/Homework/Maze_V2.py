@@ -141,7 +141,7 @@ class maze:
                 way = 1
                 return stack, way
         #left
-        if ply_x-1 == 0 :
+        if ply_x-1 >= 0 :
             if self.maze[self.ply.y][self.ply.x-1] != "X" and self.maze[self.ply.y][self.ply.x-1] != 'o'and self.maze[self.ply.y][self.ply.x-1] != 'i':
                 way = 2
                 return stack, way
