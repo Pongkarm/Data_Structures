@@ -1,12 +1,10 @@
 #Maze
 #6710301007
 #6710301009
-
 import os
 import time
 import keyboard
 from Stack import Stack
-
 class maze:
     def __init__(self) -> None:
         # self.maze = [
@@ -92,7 +90,6 @@ class maze:
         print(">>>>> Congraturation!!! <<<<<")
         print("\n\n\n")
         keyboard.wait("")
-
     def move_up(self):
         next_move = pos(self.ply.y-1, self.ply.x)
         if self.isInBound(next_move.y,next_move.x):
@@ -118,7 +115,6 @@ class maze:
                 self.ply = next_move
                 time.sleep(0.25)
         return True
-
     def move_left(self):
         next_move = pos(self.ply.y, self.ply.x-1)
         if self.isInBound(next_move.y,next_move.x): #ถ้าเป็นจริง
@@ -131,7 +127,6 @@ class maze:
                 self.ply = next_move #เซตค่าปัจจุบันเป็นข้างหน้า
                 time.sleep(0.25)
         return True
-
     def move_right(self):
         next_move = pos(self.ply.y, self.ply.x+1)
         if self.isInBound(next_move.y,next_move.x):
@@ -144,7 +139,6 @@ class maze:
                 self.ply = next_move
                 time.sleep(0.25)
         return True
-
     def lookway(self, stack):
         way = 0
         len_maze_x = len(self.maze[0])
@@ -167,7 +161,6 @@ class maze:
         if ply_y < len_maze_y-1: 
             if (self.maze[self.ply.y+1][self.ply.x] == " " and self.ply.y+1 != stack.peek().y) or self.maze[self.ply.y+1][self.ply.x] == "E":
                 way += 1
-
                            
         return way
     def one_way(self, stack):
@@ -192,29 +185,31 @@ class maze:
             stack.pop()
             stack.push(self.ply)
             self.move_down() 
-
             
         return stack
     def two_way(self, stack):
         peek_y_back = stack.peek().y
         peek_x_back = stack.peek().x
-        kong = checkStack(stack)
         #up
-        if self.maze[self.ply.y-1][self.ply.x] == " " and any(self.ply.y-1 != plyZ.y for plyZ in kong) and self.ply.y-1 != peek_y_back or self.maze[self.ply.y-1][self.ply.x] == 'E':
-            stack.push(self.ply)
-            self.move_up()
+        if not loopstack(stack, pos(self.ply.y-1, self.ply.x)):      
+            if (self.maze[self.ply.y-1][self.ply.x] == " " and self.ply.y-1 != peek_y_back) or self.maze[self.ply.y-1][self.ply.x] == 'E':
+                stack.push(self.ply)
+                self.move_up()
         #left
-        elif self.maze[self.ply.y][self.ply.x-1] == " " and any(self.ply.x-1 != plyZ.x for plyZ in kong) and self.ply.x-1 != peek_x_back or self.maze[self.ply.y][self.ply.x-1] == 'E':
-            stack.push(self.ply)
-            self.move_left() 
+        if not loopstack(stack, pos(self.ply.y, self.ply.x-1)):
+            if (self.maze[self.ply.y][self.ply.x-1] == " " and self.ply.x-1 != peek_x_back) or self.maze[self.ply.y][self.ply.x-1] == 'E':
+                stack.push(self.ply)
+                self.move_left() 
         #right
-        elif self.maze[self.ply.y][self.ply.x+1] == " " and any(self.ply.x+1 != plyZ.x for plyZ in kong) and self.ply.x+1 != peek_x_back or self.maze[self.ply.y][self.ply.x+1] == 'E':
-            stack.push(self.ply)
-            self.move_right()
+        if not loopstack(stack, pos(self.ply.y, self.ply.x+1)):
+            if (self.maze[self.ply.y][self.ply.x+1] == " " and self.ply.x+1 != peek_x_back) or self.maze[self.ply.y][self.ply.x+1] == 'E':
+                stack.push(self.ply)
+                self.move_right()
         #down
-        elif self.maze[self.ply.y+1][self.ply.x] == " " and any(self.ply.y+1 != plyZ.y for plyZ in kong) and self.ply.y+1 != peek_y_back or self.maze[self.ply.y+1][self.ply.x] == 'E':
-            stack.push(self.ply)
-            self.move_down() 
+        if not loopstack(stack, pos(self.ply.y+1, self.ply.x)):
+            if (self.maze[self.ply.y+1][self.ply.x] == " " and self.ply.y+1 != peek_y_back) or self.maze[self.ply.y+1][self.ply.x] == 'E':
+                stack.push(self.ply)
+                self.move_down() 
         return stack
     def go_to_way(self, way, stack):
         #มี 1 ทางที่ไปได้
@@ -234,19 +229,22 @@ def checkStack(stack):
         top = stack.peek()  # อ่านค่าด้านบนสุด
         kong.append(top)
         temp_stack.push(stack.pop())  # เก็บข้อมูลชั่วคราว
-
     # คืนค่าข้อมูลกลับไปยัง stack เดิม
     while not temp_stack.isEmpty():
         stack.push(temp_stack.pop())
     return kong
+
+def loopstack(stack, pos):
+    for pos_in_stack in checkStack(stack):
+        if pos.x == pos_in_stack.x and pos.y == pos_in_stack.y:
+           return True
+    return False
 class pos: 
     def __init__(self, y=None, x=None):
         self.y = y
         self.x = x
-
 #ออกด้วยวิธีการทำสัญลักษณ์บนแผนที่
 if __name__ == '__main__':
-
     pk = maze()
     stack = Stack()
     print('Press Enter to start')
@@ -265,9 +263,5 @@ if __name__ == '__main__':
         kong = checkStack(stack)
         for i in kong:
             print(i.y ,i.x)
-
         time.sleep(0.04)
-
-
 #bug chackทางในstack
-
