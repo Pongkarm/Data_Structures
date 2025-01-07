@@ -1,6 +1,7 @@
 #Maze
 #6710301007
 #6710301009
+# ออกเขาวงกตแบบไม่ทำสัญลักษณ์ (ส่งครู)
 import os
 import time
 import keyboard
@@ -264,4 +265,4 @@ if __name__ == '__main__':
         for i in kong:
             print(i.y ,i.x)
         time.sleep(0.04)
-#bug chackทางในstack
+

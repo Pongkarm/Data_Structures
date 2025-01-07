@@ -1,7 +1,7 @@
 #Maze
 #6710301007
 #6710301009
-
+# ออกเขาวงกตแบบไม่ทำสัญลักษณ์ (ไม่สมบุูณ)
 import os
 import time
 import keyboard
