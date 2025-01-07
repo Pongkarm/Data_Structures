@@ -1,7 +1,7 @@
 #Maze
 #6710301007
 #6710301009
-
+#ออกเขาวงกตแบบทำสัญลักษณ์ทุกทางที่เดิน
 import os
 import time
 import keyboard

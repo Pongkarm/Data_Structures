@@ -1,12 +1,11 @@
 #Maze
 #6710301007
 #6710301009
-# ออกเขาวงกตแบบไม่ทำสัญลักษณ์ (ไม่สมบุูณ)
+# ออกเขาวงกตแบบไม่ทำสัญลักษณ์ (ส่งครู)
 import os
 import time
 import keyboard
 from Stack import Stack
-
 class maze:
     def __init__(self) -> None:
         # self.maze = [
@@ -92,7 +91,6 @@ class maze:
         print(">>>>> Congraturation!!! <<<<<")
         print("\n\n\n")
         keyboard.wait("")
-
     def move_up(self):
         next_move = pos(self.ply.y-1, self.ply.x)
         if self.isInBound(next_move.y,next_move.x):
@@ -118,7 +116,6 @@ class maze:
                 self.ply = next_move
                 time.sleep(0.25)
         return True
-
     def move_left(self):
         next_move = pos(self.ply.y, self.ply.x-1)
         if self.isInBound(next_move.y,next_move.x): #ถ้าเป็นจริง
@@ -131,7 +128,6 @@ class maze:
                 self.ply = next_move #เซตค่าปัจจุบันเป็นข้างหน้า
                 time.sleep(0.25)
         return True
-
     def move_right(self):
         next_move = pos(self.ply.y, self.ply.x+1)
         if self.isInBound(next_move.y,next_move.x):
@@ -144,7 +140,6 @@ class maze:
                 self.ply = next_move
                 time.sleep(0.25)
         return True
-
     def lookway(self, stack):
         way = 0
         len_maze_x = len(self.maze[0])
@@ -167,109 +162,92 @@ class maze:
         if ply_y < len_maze_y-1: 
             if (self.maze[self.ply.y+1][self.ply.x] == " " and self.ply.y+1 != stack.peek().y) or self.maze[self.ply.y+1][self.ply.x] == "E":
                 way += 1
-
                            
         return way
-    def one_way(self, stack, time):
+    def one_way(self, stack):
         #up
         if self.maze[self.ply.y-1][self.ply.x] != "X" and self.ply.y-1 != stack.peek().y:
+            stack.pop()
             stack.push(self.ply)
             self.move_up()
-            time += 1
-            # stack.push(pos(self.ply.y+1, self.ply.x)) #เก็บตำแหน่งก่อนหน้า
             
         #left
         elif self.maze[self.ply.y][self.ply.x-1] != "X" and self.ply.x-1 != stack.peek().x:
+            stack.pop()
             stack.push(self.ply)
             self.move_left() 
-            time += 1
-            # stack.push(pos(self.ply.y, self.ply.x+1))
         #right
         elif self.maze[self.ply.y][self.ply.x+1] != "X" and self.ply.x+1 != stack.peek().x:
+            stack.pop()
             stack.push(self.ply)
             self.move_right()
-            time += 1
-            # stack.push(pos(self.ply.y+1, self.ply.x))
         #down
         elif self.maze[self.ply.y+1][self.ply.x] != "X" and self.ply.y+1 != stack.peek().y:
+            stack.pop()
             stack.push(self.ply)
             self.move_down() 
-            time += 1
-            # stack.push(pos(self.ply.y-1, self.ply.x)
             
-        # self.maze[stack.peek().y][stack.peek().x] = "L"  
-        # time += 1
-        return stack, time
-    def two_way(self, stack, time):
+        return stack
+    def two_way(self, stack):
         peek_y_back = stack.peek().y
         peek_x_back = stack.peek().x
-        if time > 1001:
-            time -= 1000
-            time *= 2
-            for i in range(time-1):
-                # self.maze[stack.peek().y][stack.peek().x] = " "
-                stack.pop()
-        #แก้บัคทางตัน1ช่อง (ยังไม่ได้)
-        # elif time == 1001:
-        #     time -= 1000
-        #     for i in range(1):
-        #         stack.pop()
-        
-        peek_y = stack.peek().y
-        peek_x = stack.peek().x
-        #ถ้าทางที่จะเดินไปไท่ตรงกับ X ไม่ตรงกับทางที่เคยมาครั้งก่อน และไม่ตรงกับทางที่เพิ่งผ่านมาถึงจะไปได้
         #up
-        if self.maze[self.ply.y-1][self.ply.x] != "X" and self.ply.y-1 != peek_y and self.ply.y-1 != peek_y_back:
-            stack.push(self.ply)
-            self.move_up()
-            time += 1       
+        if not loopstack(stack, pos(self.ply.y-1, self.ply.x)):      
+            if (self.maze[self.ply.y-1][self.ply.x] == " " and self.ply.y-1 != peek_y_back) or self.maze[self.ply.y-1][self.ply.x] == 'E':
+                stack.push(self.ply)
+                self.move_up()
         #left
-        elif self.maze[self.ply.y][self.ply.x-1] != "X" and self.ply.x-1 != peek_x and self.ply.x-1 != peek_x_back:
-            stack.push(self.ply)
-            self.move_left() 
-            time += 1
+        if not loopstack(stack, pos(self.ply.y, self.ply.x-1)):
+            if (self.maze[self.ply.y][self.ply.x-1] == " " and self.ply.x-1 != peek_x_back) or self.maze[self.ply.y][self.ply.x-1] == 'E':
+                stack.push(self.ply)
+                self.move_left() 
         #right
-        elif self.maze[self.ply.y][self.ply.x+1] != "X" and self.ply.x+1 != peek_x and self.ply.x+1 != peek_x_back:
-            stack.push(self.ply)
-            self.move_right()
-            time += 1
+        if not loopstack(stack, pos(self.ply.y, self.ply.x+1)):
+            if (self.maze[self.ply.y][self.ply.x+1] == " " and self.ply.x+1 != peek_x_back) or self.maze[self.ply.y][self.ply.x+1] == 'E':
+                stack.push(self.ply)
+                self.move_right()
         #down
-        elif self.maze[self.ply.y+1][self.ply.x] != "X" and self.ply.y+1 != peek_y and self.ply.y+1 != peek_y_back:
-            stack.push(self.ply)
-            self.move_down() 
-            time += 1
-            
-        # self.maze[stack.peek().y][stack.peek().x] = "L"
-        # time += 1
-        return stack, time
-    def go_to_way(self, way, stack, time):
+        if not loopstack(stack, pos(self.ply.y+1, self.ply.x)):
+            if (self.maze[self.ply.y+1][self.ply.x] == " " and self.ply.y+1 != peek_y_back) or self.maze[self.ply.y+1][self.ply.x] == 'E':
+                stack.push(self.ply)
+                self.move_down() 
+        return stack
+    def go_to_way(self, way, stack):
         #มี 1 ทางที่ไปได้
         if way == 1:
-            stack, time = self.one_way(stack, time)
-        elif way == 2:
-            stack, time = self.two_way(stack, time)
-        elif way == 3:
-            pass #ไม่ได้ทำไว้
-        elif way == 4:
-            print('เลิกนะคว.')
+            stack = self.one_way(stack)
+        elif way >= 2:
+            stack = self.two_way(stack)
         elif way == 0:
-            # self.maze[stack.peek().y][stack.peek().x] = " "
             stack.pop()
-            time = 1000
-            # way = self.lookway(stack)
-            # stack, time = self.go_to_way(way, stack, time)
-        return stack, time
+            stack.push(pos(0,0))
+        return stack 
+def checkStack(stack):
+    temp_stack = Stack()
+    kong = []
+    # อ่านข้อมูลใน stack โดยไม่ทำให้ข้อมูลหาย
+    while not stack.isEmpty():
+        top = stack.peek()  # อ่านค่าด้านบนสุด
+        kong.append(top)
+        temp_stack.push(stack.pop())  # เก็บข้อมูลชั่วคราว
+    # คืนค่าข้อมูลกลับไปยัง stack เดิม
+    while not temp_stack.isEmpty():
+        stack.push(temp_stack.pop())
+    return kong
+
+def loopstack(stack, pos):
+    for pos_in_stack in checkStack(stack):
+        if pos.x == pos_in_stack.x and pos.y == pos_in_stack.y:
+           return True
+    return False
 class pos: 
     def __init__(self, y=None, x=None):
         self.y = y
         self.x = x
-
 #ออกด้วยวิธีการทำสัญลักษณ์บนแผนที่
 if __name__ == '__main__':
-
     pk = maze()
     stack = Stack()
-    _time = 0
     print('Press Enter to start')
     while True:
         if keyboard.is_pressed("enter"):
@@ -281,12 +259,10 @@ if __name__ == '__main__':
             print("Quit Program")
             break
         way = pk.lookway(stack)
-        stack, _time = pk.go_to_way(way, stack, _time)
+        stack = pk.go_to_way(way, stack)
         pk.print()
-        print(_time)
+        kong = checkStack(stack)
+        for i in kong:
+            print(i.y ,i.x)
         time.sleep(0.04)
 
-#Bug fixes looking first way
-#bug ถ้าเจอทางแยกมากกว่า 3ทางแก็ไม่ได้
-#bug ทางวนซ้ายออกไม่ได้
-#bug ทางตันระยะไกล้ (<1ช่อง)
