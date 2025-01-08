@@ -20,22 +20,23 @@ class maze:
         # self.end = pos(2, 6)
         # self.end = pos(5, 1)
         # # self.ply = pos(2, 6)
-        self.maze = [
-                    ["X", "X", "X", "X", "X", "X", "X"],
-                    ["X", " ", " ", " ", "X", " ", "X"],
-                    ["X", " ", "X", " ", "X", " ", "X"],
-                    ["X", " ", "X", " ", "X", " ", "X"],
-                    ["X", " ", "X", " ", " ", " ", "X"],
-                    ["X", " ", "X", " ", "X", " ", "X"],
-                    ["X", " ", "X", " ", "X", " ", "X"],
-                    ["X", "X", "X", " ", "X", " ", "X"],
-                    ["X", " ", " ", " ", "X", " ", "X"],
-                    ["X", " ", "X", " ", "X", " ", "X"],
-                    ["X", " ", "X", "E", "X", "X", "X"],
-                    ]
-        self.ply = pos(10, 1)
-        self.end = pos(5, 6)
+        # self.maze = [
+        #             ["X", "X", "X", "X", "X", "X", "X"],
+        #             ["X", " ", " ", " ", "X", " ", "X"],
+        #             ["X", " ", "X", " ", "X", " ", "X"],
+        #             ["X", " ", "X", " ", "X", " ", "X"],
+        #             ["X", " ", "X", " ", "X", " ", "X"],
+        #             ["X", " ", "X", " ", " ", " ", "X"],
+        #             ["X", " ", "X", " ", "X", " ", "X"],
+        #             ["X", "X", "X", " ", "X", " ", "X"],
+        #             ["X", " ", " ", " ", "X", " ", "X"],
+        #             ["X", " ", "X", " ", "X", " ", "X"],
+        #             ["X", " ", "X", "X", "X", "X", "X"],
+        #             ]
+        # self.ply = pos(10, 1)
+        # self.end = pos(5, 6)
         # self.end = pos(10, 3)
+        # self.end = pos(10, 5)
         # self.end = pos(10, 1)
         # self.ply = pos(5, 6)
         # self.maze = [
@@ -53,25 +54,25 @@ class maze:
         #             ]
         # self.ply = pos(10, 1)
         # self.end = pos(0, 7)
-        # self.maze = [
-        #             ["X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
-        #             ["X", " ", " ", " ", "X", " ", "X", " ", "X", " ", "X", " ", "X"],
-        #             ["X", " ", "X", " ", " ", " ", "X", " ", "X", " ", "X", " ", "X"],
-        #             ["X", " ", "X", " ", "X", " ", "X", " ", "X", " ", "X", " ", "X"],
-        #             ["X", " ", "X", " ", "X", " ", "X", " ", "X", " ", "X", " ", "X"],
-        #             ["X", " ", " ", " ", "X", " ", "X", " ", "X", " ", "X", " ", "X"],
-        #             ["X", " ", "X", " ", "X", " ", "X", " ", "X", " ", "X", " ", "X"],
-        #             ["X", "X", "X", " ", "X", " ", "X", " ", "X", " ", "X", " ", "X"],
-        #             ["X", " ", "X", " ", "X", " ", " ", " ", "X", " ", "X", " ", "X"],
-        #             ["X", " ", "X", " ", " ", " ", "X", " ", "X", " ", "X", " ", "X"],
-        #             ["X", " ", "X", "X", "X", "X", "X", "X", "X", " ", "X", " ", "X"],
-        #             ["X", " ", "X", " ", " ", " ", "X", "X", "X", " ", "X", " ", "X"],
-        #             ["X", " ", " ", " ", " ", " ", "X", " ", "X", " ", "X", " ", "X"],
-        #             ["X", " ", "X", "X", " ", " ", "X", " ", "X", " ", "X", " ", "X"],
-        #             ["X", " ", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
-        #             ]
-        # self.ply = pos(10, 1)
-        # self.end = pos(0, 7)
+        self.maze = [
+                    ["X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
+                    ["X", " ", " ", " ", "X", " ", "X", " ", " ", " ", "X", " ", "X"],
+                    ["X", " ", "X", " ", " ", " ", " ", " ", "X", " ", "X", " ", "X"],
+                    ["X", " ", "X", " ", "X", " ", "X", " ", "X", " ", " ", " ", "X"],
+                    ["X", " ", "X", " ", "X", " ", "X", "X", "X", "X", "X", " ", "X"],
+                    ["X", " ", " ", " ", "X", " ", "X", " ", "X", " ", "X", " ", "X"],
+                    ["X", " ", "X", " ", "X", " ", "X", " ", " ", " ", "X", " ", "X"],
+                    ["X", "X", "X", " ", "X", " ", "X", " ", "X", " ", " ", " ", "X"],
+                    ["X", " ", "X", " ", "X", " ", " ", " ", "X", " ", "X", " ", "X"],
+                    ["X", " ", "X", " ", " ", " ", "X", " ", "X", " ", "X", " ", "X"],
+                    ["X", " ", "X", "X", "X", "X", "X", "X", "X", " ", "X", " ", "X"],
+                    ["X", " ", "X", " ", "X", " ", "X", "X", "X", " ", "X", " ", " "],
+                    ["X", " ", " ", " ", " ", " ", " ", " ", " ", " ", "X", " ", "X"],
+                    ["X", " ", "X", "X", " ", "X", "X", " ", "X", " ", "X", " ", "X"],
+                    ["X", " ", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
+                    ]
+        self.ply = pos(14, 1)
+        self.end = pos(11, 12)
         self.maze[self.ply.y][self.ply.x] = "P"
         self.maze[self.end.y][self.end.x] = "E"
     #เช็คว่าอยู่ในบอร์ดอยู่หรือเปล่า
@@ -106,7 +107,7 @@ class maze:
                 self.maze[self.ply.y][self.ply.x] = " "
                 self.maze[next_move.y][next_move.x] = "P"
                 self.ply = next_move
-                time.sleep(0.25)
+                time.sleep(0.025)
         return True
     
     def move_down(self):
@@ -119,7 +120,7 @@ class maze:
                 self.maze[self.ply.y][self.ply.x] = " "
                 self.maze[next_move.y][next_move.x] = "P"
                 self.ply = next_move
-                time.sleep(0.25)
+                time.sleep(0.025)
         return True
     def move_left(self):
         next_move = pos(self.ply.y, self.ply.x-1)
@@ -131,7 +132,7 @@ class maze:
                 self.maze[self.ply.y][self.ply.x] = " " #แทนที่ก่อนหน้าเป็นช่องว่าง
                 self.maze[next_move.y][next_move.x] = "P" #แทนที่ต่อไปด้วย P
                 self.ply = next_move #เซตค่าปัจจุบันเป็นข้างหน้า
-                time.sleep(0.25)
+                time.sleep(0.025)
         return True
     def move_right(self):
         next_move = pos(self.ply.y, self.ply.x+1)
@@ -143,7 +144,7 @@ class maze:
                 self.maze[self.ply.y][self.ply.x] = " "
                 self.maze[next_move.y][next_move.x] = "P"
                 self.ply = next_move
-                time.sleep(0.25)
+                time.sleep(0.025)
         return True
     def lookway(self, stack):
         way = 0
@@ -196,6 +197,8 @@ class maze:
     def two_way(self, stack):
         peek_y_back = stack.peek().y
         peek_x_back = stack.peek().x
+        now_y = self.ply.y
+        now_x = self.ply.x
         #up
         if not loopstack(stack, pos(self.ply.y-1, self.ply.x)):      
             if (self.maze[self.ply.y-1][self.ply.x] == " " and self.ply.y-1 != peek_y_back) or self.maze[self.ply.y-1][self.ply.x] == 'E':
@@ -215,17 +218,45 @@ class maze:
         if not loopstack(stack, pos(self.ply.y+1, self.ply.x)):
             if (self.maze[self.ply.y+1][self.ply.x] == " " and self.ply.y+1 != peek_y_back) or self.maze[self.ply.y+1][self.ply.x] == 'E':
                 stack.push(self.ply)
-                self.move_down()    
+                self.move_down()
+        if now_y == self.ply.y and now_x == self.ply.x:
+            stack = popstackuntil_0(stack)
         return stack
     def go_to_way(self, way, stack):
-        #มี 1 ทางที่ไปได้
+        
         if way == 1:
             stack = self.one_way(stack)
         elif way >= 2:
             stack = self.two_way(stack)
         elif way == 0:
+            # if self.ply.y-1 != stack.peek().y and self.maze[self.ply.y-1][self.ply.x] != "X" and not loopstack(stack, pos(self.ply.y-1, self.ply.x)):
+            #     stack = popstackuntil_0(stack)
+            # elif self.ply.x-1 != stack.peek().x and self.maze[self.ply.y][self.ply.x-1] != "X" and not loopstack(stack, pos(self.ply.y, self.ply.x-1)):
+            #     stack = popstackuntil_0(stack)
+            # elif self.ply.x+1 != stack.peek().x and self.maze[self.ply.y][self.ply.x+1] != "X" and not loopstack(stack, pos(self.ply.y, self.ply.x+1)):
+            #     stack = popstackuntil_0(stack)
+            # elif self.ply.y+1 != stack.peek().y and self.maze[self.ply.y+1][self.ply.x] != "X" and not loopstack(stack, pos(self.ply.y+1, self.ply.x)):
+            #     stack = popstackuntil_0(stack)
+            #บนซ้ายขวา
+            # if not loopstack(stack, pos(self.ply.y-1, self.ply.x)) and not loopstack(stack, pos(self.ply.y, self.ply.x-1)) and not loopstack(stack, pos(self.ply.y, self.ply.x+1)) and self.maze[self.ply.y-1][self.ply.x] != "X" and self.maze[self.ply.y][self.ply.x+1] != "X" and self.maze[self.ply.y][self.ply.x-1] != "X":
+            #     stack = popstackuntil_0(stack)
+            # #ล่าง ขวา ซ้าย
+            # elif not loopstack(stack, pos(self.ply.y, self.ply.x-1)) and not loopstack(stack, pos(self.ply.y, self.ply.x+1)) and not loopstack(stack, pos(self.ply.y+1, self.ply.x)) and self.maze[self.ply.y+1][self.ply.x] != "X" and self.maze[self.ply.y][self.ply.x-1] != "X" and self.maze[self.ply.y][self.ply.x+1] != "X":
+            #     stack = popstackuntil_0(stack)
+            # #บนขวาล่าง
+            # elif not loopstack(stack, pos(self.ply.y-1, self.ply.x)) and not loopstack(stack, pos(self.ply.y, self.ply.x+1)) and not loopstack(stack, pos(self.ply.y+1, self.ply.x)) and self.maze[self.ply.y][self.ply.x+1] != "X" and self.maze[self.ply.y+1][self.ply.x] != "X" and self.maze[self.ply.y-1][self.ply.x] != "X":
+            #     stack = popstackuntil_0(stack)
+            # #บนซ้ายpล่าง
+            # elif not loopstack(stack, pos(self.ply.y-1, self.ply.x)) and not loopstack(stack, pos(self.ply.y, self.ply.x-1)) and not loopstack(stack, pos(self.ply.y+1, self.ply.x)) and self.maze[self.ply.y][self.ply.x-1] != "X" and self.maze[self.ply.y+1][self.ply.x] != "X" and self.maze[self.ply.y-1][self.ply.x] != "X":
+            #     stack = popstackuntil_0(stack)
+            # elif stack.peek().y == 0 and stack.peek().x == 0:
+            #     stack = popstackuntil_0(stack)
+            # else:
+            #     stack.pop()
+            #     stack.push(pos(0,0))
             stack.pop()
             stack.push(pos(0,0))
+
         return stack 
 def checkStack(stack):
     temp_stack = Stack()
@@ -245,6 +276,15 @@ def loopstack(stack, pos):
         if pos.x == pos_in_stack.x and pos.y == pos_in_stack.y:
            return True
     return False
+def popstackuntil_0(stack):
+        try:
+            while stack:
+               stack.pop()
+        except:
+            return stack
+        stack.push(pos(0,0)) 
+        return stack
+    
 class pos: 
     def __init__(self, y=None, x=None):
         self.y = y

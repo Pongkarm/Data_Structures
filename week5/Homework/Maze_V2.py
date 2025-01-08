@@ -53,6 +53,25 @@ class maze:
         #             ]
         # self.ply = pos(10, 1)
         # self.end = pos(0, 7)
+        self.maze = [
+            ["X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
+            ["X", " ", " ", " ", "X", " ", "X", " ", " ", " ", "X", " ", "X"],
+            ["X", " ", "X", " ", " ", " ", " ", " ", "X", " ", "X", " ", "X"],
+            ["X", " ", "X", " ", "X", " ", "X", " ", "X", " ", " ", " ", "X"],
+            ["X", " ", "X", " ", "X", " ", "X", "X", "X", "X", "X", " ", "X"],
+            ["X", " ", " ", " ", "X", " ", "X", " ", "X", " ", "X", " ", "X"],
+            ["X", " ", "X", " ", "X", " ", "X", " ", " ", " ", "X", " ", "X"],
+            ["X", "X", "X", " ", "X", " ", "X", " ", "X", " ", " ", " ", "X"],
+            ["X", " ", "X", " ", "X", " ", " ", " ", "X", " ", "X", " ", "X"],
+            ["X", " ", "X", " ", " ", " ", "X", " ", "X", " ", "X", " ", "X"],
+            ["X", " ", "X", "X", "X", "X", "X", "X", "X", " ", "X", " ", "X"],
+            ["X", " ", "X", " ", "X", " ", "X", "X", "X", " ", "X", " ", " "],
+            ["X", " ", " ", " ", " ", " ", " ", " ", " ", " ", "X", " ", "X"],
+            ["X", " ", "X", "X", " ", "X", "X", " ", "X", " ", "X", " ", "X"],
+            ["X", " ", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
+            ]
+        self.ply = pos(14, 1)
+        self.end = pos(11, 12)
         self.maze[self.ply.y][self.ply.x] = "P"
         self.maze[self.end.y][self.end.x] = "E"
     #เช็คว่าอยู่ในบอร์ดอยู่หรือเปล่า
@@ -88,7 +107,7 @@ class maze:
                 self.maze[self.ply.y][self.ply.x] = "i"
                 self.maze[next_move.y][next_move.x] = "P"
                 self.ply = next_move
-                time.sleep(0.25)
+                time.sleep(0.025)
         return True
     
     def move_down(self):
@@ -101,7 +120,7 @@ class maze:
                 self.maze[self.ply.y][self.ply.x] = "i"
                 self.maze[next_move.y][next_move.x] = "P"
                 self.ply = next_move
-                time.sleep(0.25)
+                time.sleep(0.025)
         return True
 
     def move_left(self):
@@ -114,7 +133,7 @@ class maze:
                 self.maze[self.ply.y][self.ply.x] = "i" #แทนที่ก่อนหน้าเป็นช่องว่าง
                 self.maze[next_move.y][next_move.x] = "P" #แทนที่ต่อไปด้วย P
                 self.ply = next_move #เซตค่าปัจจุบันเป็นข้างหน้า
-                time.sleep(0.25)
+                time.sleep(0.025)
         return True
 
     def move_right(self):
@@ -127,7 +146,7 @@ class maze:
                 self.maze[self.ply.y][self.ply.x] = "i"
                 self.maze[next_move.y][next_move.x] = "P"
                 self.ply = next_move
-                time.sleep(0.25)
+                time.sleep(0.025)
         return True
 
     def lookway(self,stack):
