@@ -497,69 +497,24 @@ permutations_result = list(permutations(choices, 4))
 
 for idx, perm in enumerate(permutations_result, start=1):
     print(idx, perm)
+# import random
+# a = random.randint(1, 24)
 
 
-
-        # if htw == 1:
-        #     #up
-        #     if not loopstack(stack, pos(self.ply.y-1, self.ply.x)):      
-        #         if (self.maze[self.ply.y-1][self.ply.x] == " " and self.ply.y-1 != peek_y_back) or self.maze[self.ply.y-1][self.ply.x] == 'E':
-        #             stack.push(self.ply)
-        #             self.move_up()
-        #     #left
-        #     if not loopstack(stack, pos(self.ply.y, self.ply.x-1)):
-        #         if (self.maze[self.ply.y][self.ply.x-1] == " " and self.ply.x-1 != peek_x_back) or self.maze[self.ply.y][self.ply.x-1] == 'E':
-        #             stack.push(self.ply)
-        #             self.move_left() 
-        #     #right
-        #     if not loopstack(stack, pos(self.ply.y, self.ply.x+1)):
-        #         if (self.maze[self.ply.y][self.ply.x+1] == " " and self.ply.x+1 != peek_x_back) or self.maze[self.ply.y][self.ply.x+1] == 'E':
-        #             stack.push(self.ply)
-        #             self.move_right()
-        #     #down
-        #     if not loopstack(stack, pos(self.ply.y+1, self.ply.x)):
-        #         if (self.maze[self.ply.y+1][self.ply.x] == " " and self.ply.y+1 != peek_y_back) or self.maze[self.ply.y+1][self.ply.x] == 'E':
-        #             stack.push(self.ply)
-        #             self.move_down()
-        # if htw == 2:
-        #     #down
-        #     if not loopstack(stack, pos(self.ply.y+1, self.ply.x)):
-        #         if (self.maze[self.ply.y+1][self.ply.x] == " " and self.ply.y+1 != peek_y_back) or self.maze[self.ply.y+1][self.ply.x] == 'E':
-        #             stack.push(self.ply)
-        #             self.move_down()
-        #     #up
-        #     if not loopstack(stack, pos(self.ply.y-1, self.ply.x)):      
-        #         if (self.maze[self.ply.y-1][self.ply.x] == " " and self.ply.y-1 != peek_y_back) or self.maze[self.ply.y-1][self.ply.x] == 'E':
-        #             stack.push(self.ply)
-        #             self.move_up()
-        #     #left
-        #     if not loopstack(stack, pos(self.ply.y, self.ply.x-1)):
-        #         if (self.maze[self.ply.y][self.ply.x-1] == " " and self.ply.x-1 != peek_x_back) or self.maze[self.ply.y][self.ply.x-1] == 'E':
-        #             stack.push(self.ply)
-        #             self.move_left() 
-        #     #right
-        #     if not loopstack(stack, pos(self.ply.y, self.ply.x+1)):
-        #         if (self.maze[self.ply.y][self.ply.x+1] == " " and self.ply.x+1 != peek_x_back) or self.maze[self.ply.y][self.ply.x+1] == 'E':
-        #             stack.push(self.ply)
-        #             self.move_right()
-        # if htw == 3:
-        #     #up
-        #     if not loopstack(stack, pos(self.ply.y-1, self.ply.x)):      
-        #         if (self.maze[self.ply.y-1][self.ply.x] == " " and self.ply.y-1 != peek_y_back) or self.maze[self.ply.y-1][self.ply.x] == 'E':
-        #             stack.push(self.ply)
-        #             self.move_up()
-        #     #right
-        #     if not loopstack(stack, pos(self.ply.y, self.ply.x+1)):
-        #         if (self.maze[self.ply.y][self.ply.x+1] == " " and self.ply.x+1 != peek_x_back) or self.maze[self.ply.y][self.ply.x+1] == 'E':
-        #             stack.push(self.ply)
-        #             self.move_right()
-        #     #left
-        #     if not loopstack(stack, pos(self.ply.y, self.ply.x-1)):
-        #         if (self.maze[self.ply.y][self.ply.x-1] == " " and self.ply.x-1 != peek_x_back) or self.maze[self.ply.y][self.ply.x-1] == 'E':
-        #             stack.push(self.ply)
-        #             self.move_left() 
-        #     #down
-        #     if not loopstack(stack, pos(self.ply.y+1, self.ply.x)):
-        #         if (self.maze[self.ply.y+1][self.ply.x] == " " and self.ply.y+1 != peek_y_back) or self.maze[self.ply.y+1][self.ply.x] == 'E':
-        #             stack.push(self.ply)
-        #             self.move_down()
+self.maze = [
+            ["X", "X", "X", "X", "X", "X", "X", " ", "X", "X", "X", "X", "X"],
+            ["X", " ", " ", " ", "X", " ", "X", " ", "X", " ", "X", " ", "X"],
+            ["X", " ", "X", " ", " ", " ", "X", " ", "X", " ", " ", " ", "X"],
+            ["X", " ", "X", " ", "X", " ", "X", " ", "X", "X", "X", " ", "X"],
+            ["X", " ", "X", " ", "X", " ", " ", " ", " ", "X", "X", " ", "X"],
+            ["X", " ", " ", " ", "X", " ", "X", " ", "X", "X", "X", " ", "X"],
+            ["X", " ", "X", " ", "X", " ", "X", " ", "X", " ", "X", " ", "X"],
+            ["X", "X", "X", " ", "X", " ", "X", "X", "X", " ", "X", " ", "X"],
+            ["X", " ", "X", " ", "X", " ", " ", " ", "X", " ", "X", " ", "X"],
+            ["X", " ", "X", " ", " ", " ", "X", " ", "X", " ", " ", " ", "X"],
+            ["X", " ", "X", "X", "X", "X", "X", " ", "X", " ", "X", " ", "X"],
+            ["X", " ", "X", " ", "X", " ", "X", " ", "X", " ", "X", " ", "X"],
+            ["X", " ", " ", " ", " ", " ", " ", " ", "X", " ", "X", " ", "X"],
+            ["X", " ", "X", "X", " ", "X", "X", " ", "X", " ", "X", " ", "X"],
+            ["X", " ", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
+            ]
