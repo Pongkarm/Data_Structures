@@ -21,7 +21,6 @@ class maze:
         # self.end = pos(2, 6)
         # self.end = pos(5, 1)
         # # self.ply = pos(2, 6)
-        
         # self.maze = [
         #             ["X", "X", "X", "X", "X", "X", "X"],
         #             ["X", " ", " ", " ", "X", " ", "X"],
@@ -41,7 +40,6 @@ class maze:
         # self.end = pos(10, 5)
         # self.end = pos(10, 1)
         # self.ply = pos(5, 6)
-        
         # self.maze = [
         #             ["X", "X", "X", "X", "X", "X", "X", " ", "X"],
         #             ["X", " ", " ", " ", "X", " ", "X", " ", "X"],
@@ -57,7 +55,6 @@ class maze:
         #             ]
         # self.ply = pos(10, 1)
         # self.end = pos(0, 7)
-        
         self.maze = [
                     ["X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
                     ["X", " ", " ", " ", "X", " ", "X", " ", " ", " ", "X", " ", "X"],
@@ -175,7 +172,6 @@ class maze:
                            
         return way
     def one_way(self, stack):
-        #เช็คทาง ถ้าทางที่ไปไม่เป็น X และไม่เป็ทางที่พึ่งเดินมา
         #up
         if self.maze[self.ply.y-1][self.ply.x] != "X" and self.ply.y-1 != stack.peek().y:
             stack.pop()
@@ -199,53 +195,90 @@ class maze:
             self.move_down() 
             
         return stack
-    def more_one_way(self, stack, htw):
+    def two_way(self, stack, htw):
         peek_y_back = stack.peek().y
         peek_x_back = stack.peek().x
         now_y = self.ply.y
         now_x = self.ply.x
-        if htw == 25:
+        if htw == 4:
             htw = 99
-            
-        #คำสั่งวิเศษจะช่วยให้เราเปลี่ยนเส้นทางแบบทุกรูปแบบ 24 แบบ บน ซ้าย ขวา ล่าง, ล่าง ขวา ซ้าย บน...
-        # choices = ['1', '2', '3', '4'] 
-        choices = ['บน', 'ซ้าย', 'ขวา', 'ล่าง'] 
-        permutations_result = list(permutations(choices, 4))
-        #ในส่วนตรงนี้ไม่สามารถอธิบายด้วย comment ได้ถ้าดูเองไม่เข้าใจให้โทรมาถาม
-        for idex, choidce in enumerate(permutations_result, start=1):
-            if idex == htw:
-                if choidce[0] == 'บน':
-                    if not loopstack(stack, pos(self.ply.y-1, self.ply.x)):      
-                        if (self.maze[self.ply.y-1][self.ply.x] == " " and self.ply.y-1 != peek_y_back) or self.maze[self.ply.y-1][self.ply.x] == 'E':
-                            stack.push(self.ply)
-                            self.move_up()
-                if choidce[1] == 'ซ้าย':
-                    if not loopstack(stack, pos(self.ply.y, self.ply.x-1)):
-                        if (self.maze[self.ply.y][self.ply.x-1] == " " and self.ply.x-1 != peek_x_back) or self.maze[self.ply.y][self.ply.x-1] == 'E':
-                            stack.push(self.ply)
-                            self.move_left()
-                if choidce[2] == 'ขวา':
-                    if not loopstack(stack, pos(self.ply.y, self.ply.x+1)):
-                        if (self.maze[self.ply.y][self.ply.x+1] == " " and self.ply.x+1 != peek_x_back) or self.maze[self.ply.y][self.ply.x+1] == 'E':
-                            stack.push(self.ply)
-                            self.move_right()
-                if choidce[3] == 'ขวา':
-                    if not loopstack(stack, pos(self.ply.y+1, self.ply.x)):
-                        if (self.maze[self.ply.y+1][self.ply.x] == " " and self.ply.y+1 != peek_y_back) or self.maze[self.ply.y+1][self.ply.x] == 'E':
-                            stack.push(self.ply)
-                            self.move_down()
+        
+        if htw == 1:
+            #up
+            if not loopstack(stack, pos(self.ply.y-1, self.ply.x)):      
+                if (self.maze[self.ply.y-1][self.ply.x] == " " and self.ply.y-1 != peek_y_back) or self.maze[self.ply.y-1][self.ply.x] == 'E':
+                    stack.push(self.ply)
+                    self.move_up()
+            #left
+            if not loopstack(stack, pos(self.ply.y, self.ply.x-1)):
+                if (self.maze[self.ply.y][self.ply.x-1] == " " and self.ply.x-1 != peek_x_back) or self.maze[self.ply.y][self.ply.x-1] == 'E':
+                    stack.push(self.ply)
+                    self.move_left() 
+            #right
+            if not loopstack(stack, pos(self.ply.y, self.ply.x+1)):
+                if (self.maze[self.ply.y][self.ply.x+1] == " " and self.ply.x+1 != peek_x_back) or self.maze[self.ply.y][self.ply.x+1] == 'E':
+                    stack.push(self.ply)
+                    self.move_right()
+            #down
+            if not loopstack(stack, pos(self.ply.y+1, self.ply.x)):
+                if (self.maze[self.ply.y+1][self.ply.x] == " " and self.ply.y+1 != peek_y_back) or self.maze[self.ply.y+1][self.ply.x] == 'E':
+                    stack.push(self.ply)
+                    self.move_down()
+        if htw == 2:
+            #down
+            if not loopstack(stack, pos(self.ply.y+1, self.ply.x)):
+                if (self.maze[self.ply.y+1][self.ply.x] == " " and self.ply.y+1 != peek_y_back) or self.maze[self.ply.y+1][self.ply.x] == 'E':
+                    stack.push(self.ply)
+                    self.move_down()
+            #up
+            if not loopstack(stack, pos(self.ply.y-1, self.ply.x)):      
+                if (self.maze[self.ply.y-1][self.ply.x] == " " and self.ply.y-1 != peek_y_back) or self.maze[self.ply.y-1][self.ply.x] == 'E':
+                    stack.push(self.ply)
+                    self.move_up()
+            #left
+            if not loopstack(stack, pos(self.ply.y, self.ply.x-1)):
+                if (self.maze[self.ply.y][self.ply.x-1] == " " and self.ply.x-1 != peek_x_back) or self.maze[self.ply.y][self.ply.x-1] == 'E':
+                    stack.push(self.ply)
+                    self.move_left() 
+            #right
+            if not loopstack(stack, pos(self.ply.y, self.ply.x+1)):
+                if (self.maze[self.ply.y][self.ply.x+1] == " " and self.ply.x+1 != peek_x_back) or self.maze[self.ply.y][self.ply.x+1] == 'E':
+                    stack.push(self.ply)
+                    self.move_right()
+        if htw == 3:
+            #up
+            if not loopstack(stack, pos(self.ply.y-1, self.ply.x)):      
+                if (self.maze[self.ply.y-1][self.ply.x] == " " and self.ply.y-1 != peek_y_back) or self.maze[self.ply.y-1][self.ply.x] == 'E':
+                    stack.push(self.ply)
+                    self.move_up()
+            #right
+            if not loopstack(stack, pos(self.ply.y, self.ply.x+1)):
+                if (self.maze[self.ply.y][self.ply.x+1] == " " and self.ply.x+1 != peek_x_back) or self.maze[self.ply.y][self.ply.x+1] == 'E':
+                    stack.push(self.ply)
+                    self.move_right()
+            #left
+            if not loopstack(stack, pos(self.ply.y, self.ply.x-1)):
+                if (self.maze[self.ply.y][self.ply.x-1] == " " and self.ply.x-1 != peek_x_back) or self.maze[self.ply.y][self.ply.x-1] == 'E':
+                    stack.push(self.ply)
+                    self.move_left() 
+            #down
+            if not loopstack(stack, pos(self.ply.y+1, self.ply.x)):
+                if (self.maze[self.ply.y+1][self.ply.x] == " " and self.ply.y+1 != peek_y_back) or self.maze[self.ply.y+1][self.ply.x] == 'E':
+                    stack.push(self.ply)
+                    self.move_down()
 
-        # เมื่อเจอทางตัน(เราอยู่ที่เดิม)
+
+        # เมื่อเจอทางตัน
         if now_y == self.ply.y and now_x == self.ply.x:
-            #รีเซตstack
             stack = popstackuntil_0(stack)
             htw += 1
         return stack, htw
     def go_to_way(self, way, stack, htw):
+        
         if way == 1:
             stack = self.one_way(stack)
         elif way >= 2:
-            stack, htw = self.more_one_way(stack, htw)
+            stack, htw = self.two_way(stack, htw)
         elif way == 0:
             stack.pop()
             stack.push(pos(0,0))
@@ -266,7 +299,6 @@ def checkStack(stack):
 
 def loopstack(stack, pos):
     for pos_in_stack in checkStack(stack):
-        #ถ้าตำแหน่งของเรามีอยู่ในstackที่เก็บไว้
         if pos.x == pos_in_stack.x and pos.y == pos_in_stack.y:
            return True
     return False
@@ -286,7 +318,7 @@ class pos:
 #ออกด้วยวิธีการทำสัญลักษณ์บนแผนที่
 if __name__ == '__main__':
     pk = maze()
-    stack = Stack() # Stackในครั้งนี้เราจะเก็บจุด x,y ของก่อนทางแยก และเก็บทางที่เราพึ่งจะเดินทางมา สองเงื่อนไขเท่านั้น
+    stack = Stack()
     print('Press Enter to start')
     htw = 1 #วิธีการมองและเดิน
     while True:
@@ -304,7 +336,6 @@ if __name__ == '__main__':
             break
         pk.print()
         kong = checkStack(stack)
-        #เช็คดูข้อมูลในstack
         # for i in kong:
         #     print(i.y ,i.x)
         #     print(htw)
@@ -312,31 +343,4 @@ if __name__ == '__main__':
     if htw > 99:
         print('แผนที่นี้ไม่มีทางออก')
 
-#เวอร์ชั่นนี้แก้จาก maze3 
-#maze3 มีบัคทีตัวเราไม่ย้อนกลับไปเวลาเจอทางตันทั้งหมด(ไม่ผ่านแยกที่เคยผ่านมาแล้ว)
-#เวอร์ชั่นนี้จึงแก้โดยการเมื่อเจอทางตันทุกทางแล้วจะให้ลบข้อมูลทางที่มาหมดและเปลี่ยนวิธีการเดิน
-
-
-#ก็โปรเจคนี้ใช้เวลาประมาณ 2 อาทิตเลยนะกว่าจะได้สมบูรณ์แบบนี้กว่าจะออกมาได้ซัดไป 4 version เลย
-#รวมหัวสมองอันน้อยนิดระหว่าง programmer ดรัณภพ(6710301007) และ อภิสักก์ (6710301009)
-#ถามว่ามีถามแชท GPT ไหม ก็มีนะแค่ 3 แบบคือ 
-# ถามแนวคิดฟั่งก์ชั่น loopstack (line265)
-# ถามการคิดทิศทาง4ทิศแบบไม่ซ้ำ(line209-213)
-# ถามแนวคิดฟั่งก์ชั่น popstackuntil_0 (line270)
-#ที่เหลือนอกจากนี้คิดเองหมดสดสด
-#ก็ขออวยพรให้ทุกคนอ่านโค้ดพวกเราด้วยความสนุกและไม่งงนะบั๊ยบายย ^-^
-#ปล.ใครไม่เชื่อว่าเขียนเองให้ไปถาม อภิสักก์ (6710301009)ได้เลย ถามโค้ดส่วนไหนก็ได้เขาจะอธิบายให้คุณฟังได้
-
-#ก็น่าจะออกได้ทุกทางนะโค้ดนี้ จริงๆมี bug ในกรณีที่ไม่เจอทางออกเลย+ไม่เจอทางแยก อันนั้ก็จะติด bug inf loop ผมรู้แหละแต่ช่างมันเถอะคงไม่เจอหรอกใครจะไปสร้างด่านแบบนั้นวะ   และถ้าถามว่าทำไมตัวเรามันเดินไปเจอ E แล้วทำไมมันไม่เข้าเลย...เราก็รู้ครับแต่เราขี้เกียจแก้55 มันก็ออกได้เหมือนกันไหมล่ะรออีกหน่อยไม่ได้หรอ
-#แมพที่บัค inf loop ไม่น่าได้เจอหรอก
-        # self.maze = [
-        #             ["X", " ", "X", " ", "X", "E", "X"],
-        #             ["X", "X", "X", "X", "X", " ", "X"],
-        #             ["X", " ", " ", " ", "X", " ", "X"],
-        #             ["X", " ", "X", " ", "X", " ", "X"],
-        #             ["X", " ", "X", "X", "X", "X", "X"],
-        #             ]
-        # self.ply = pos(4, 1)
-        
-#ถ้ามีบัคอะไรแจ้งได้นะครับ issues ไว้ได้เลย
-# https://github.com/Pongkarm/Data_Structures/issues
+#เวอร์ชั่นนี้ เป็นรุ่นก่อน maze4 จะลองแค่ 3 แบบการเดินต่างจาก maze4 ที่ลอง 24 ทาง

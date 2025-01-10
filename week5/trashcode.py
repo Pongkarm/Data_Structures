@@ -450,3 +450,116 @@
 # print(Calculator.add(5,10))
 
 # 
+            # if self.ply.y-1 != stack.peek().y and self.maze[self.ply.y-1][self.ply.x] != "X" and not loopstack(stack, pos(self.ply.y-1, self.ply.x)):
+            #     stack = popstackuntil_0(stack)
+            # elif self.ply.x-1 != stack.peek().x and self.maze[self.ply.y][self.ply.x-1] != "X" and not loopstack(stack, pos(self.ply.y, self.ply.x-1)):
+            #     stack = popstackuntil_0(stack)
+            # elif self.ply.x+1 != stack.peek().x and self.maze[self.ply.y][self.ply.x+1] != "X" and not loopstack(stack, pos(self.ply.y, self.ply.x+1)):
+            #     stack = popstackuntil_0(stack)
+            # elif self.ply.y+1 != stack.peek().y and self.maze[self.ply.y+1][self.ply.x] != "X" and not loopstack(stack, pos(self.ply.y+1, self.ply.x)):
+            #     stack = popstackuntil_0(stack)
+            #บนซ้ายขวา
+            # if not loopstack(stack, pos(self.ply.y-1, self.ply.x)) and not loopstack(stack, pos(self.ply.y, self.ply.x-1)) and not loopstack(stack, pos(self.ply.y, self.ply.x+1)) and self.maze[self.ply.y-1][self.ply.x] != "X" and self.maze[self.ply.y][self.ply.x+1] != "X" and self.maze[self.ply.y][self.ply.x-1] != "X":
+            #     stack = popstackuntil_0(stack)
+            # #ล่าง ขวา ซ้าย
+            # elif not loopstack(stack, pos(self.ply.y, self.ply.x-1)) and not loopstack(stack, pos(self.ply.y, self.ply.x+1)) and not loopstack(stack, pos(self.ply.y+1, self.ply.x)) and self.maze[self.ply.y+1][self.ply.x] != "X" and self.maze[self.ply.y][self.ply.x-1] != "X" and self.maze[self.ply.y][self.ply.x+1] != "X":
+            #     stack = popstackuntil_0(stack)
+            # #บนขวาล่าง
+            # elif not loopstack(stack, pos(self.ply.y-1, self.ply.x)) and not loopstack(stack, pos(self.ply.y, self.ply.x+1)) and not loopstack(stack, pos(self.ply.y+1, self.ply.x)) and self.maze[self.ply.y][self.ply.x+1] != "X" and self.maze[self.ply.y+1][self.ply.x] != "X" and self.maze[self.ply.y-1][self.ply.x] != "X":
+            #     stack = popstackuntil_0(stack)
+            # #บนซ้ายpล่าง
+            # elif not loopstack(stack, pos(self.ply.y-1, self.ply.x)) and not loopstack(stack, pos(self.ply.y, self.ply.x-1)) and not loopstack(stack, pos(self.ply.y+1, self.ply.x)) and self.maze[self.ply.y][self.ply.x-1] != "X" and self.maze[self.ply.y+1][self.ply.x] != "X" and self.maze[self.ply.y-1][self.ply.x] != "X":
+            #     stack = popstackuntil_0(stack)
+            # elif stack.peek().y == 0 and stack.peek().x == 0:
+            #     stack = popstackuntil_0(stack)
+            # else:
+            #     stack.pop()
+            #     stack.push(pos(0,0))
+# def clear_stack(stack):
+#     while stack:
+#         print(f"Popped: {stack.pop()}")
+#     print("Stack is now empty:", stack)
+
+# # ตัวอย่างการใช้งาน
+# stack = [5, 15, 25, 35]
+# clear_stack(stack)
+
+from itertools import permutations
+
+# ตัวเลือกทั้งหมด
+choices = ['บน', 'ซ้าย', 'ขวา', 'ล่าง']
+
+# สร้าง Permutations (การจัดเรียง) ของ 4 ตัวเลือก
+permutations_result = list(permutations(choices, 4))
+
+# for i in permutations_result:
+#     print(i[0])
+
+for idx, perm in enumerate(permutations_result, start=1):
+    print(idx, perm)
+
+
+
+        # if htw == 1:
+        #     #up
+        #     if not loopstack(stack, pos(self.ply.y-1, self.ply.x)):      
+        #         if (self.maze[self.ply.y-1][self.ply.x] == " " and self.ply.y-1 != peek_y_back) or self.maze[self.ply.y-1][self.ply.x] == 'E':
+        #             stack.push(self.ply)
+        #             self.move_up()
+        #     #left
+        #     if not loopstack(stack, pos(self.ply.y, self.ply.x-1)):
+        #         if (self.maze[self.ply.y][self.ply.x-1] == " " and self.ply.x-1 != peek_x_back) or self.maze[self.ply.y][self.ply.x-1] == 'E':
+        #             stack.push(self.ply)
+        #             self.move_left() 
+        #     #right
+        #     if not loopstack(stack, pos(self.ply.y, self.ply.x+1)):
+        #         if (self.maze[self.ply.y][self.ply.x+1] == " " and self.ply.x+1 != peek_x_back) or self.maze[self.ply.y][self.ply.x+1] == 'E':
+        #             stack.push(self.ply)
+        #             self.move_right()
+        #     #down
+        #     if not loopstack(stack, pos(self.ply.y+1, self.ply.x)):
+        #         if (self.maze[self.ply.y+1][self.ply.x] == " " and self.ply.y+1 != peek_y_back) or self.maze[self.ply.y+1][self.ply.x] == 'E':
+        #             stack.push(self.ply)
+        #             self.move_down()
+        # if htw == 2:
+        #     #down
+        #     if not loopstack(stack, pos(self.ply.y+1, self.ply.x)):
+        #         if (self.maze[self.ply.y+1][self.ply.x] == " " and self.ply.y+1 != peek_y_back) or self.maze[self.ply.y+1][self.ply.x] == 'E':
+        #             stack.push(self.ply)
+        #             self.move_down()
+        #     #up
+        #     if not loopstack(stack, pos(self.ply.y-1, self.ply.x)):      
+        #         if (self.maze[self.ply.y-1][self.ply.x] == " " and self.ply.y-1 != peek_y_back) or self.maze[self.ply.y-1][self.ply.x] == 'E':
+        #             stack.push(self.ply)
+        #             self.move_up()
+        #     #left
+        #     if not loopstack(stack, pos(self.ply.y, self.ply.x-1)):
+        #         if (self.maze[self.ply.y][self.ply.x-1] == " " and self.ply.x-1 != peek_x_back) or self.maze[self.ply.y][self.ply.x-1] == 'E':
+        #             stack.push(self.ply)
+        #             self.move_left() 
+        #     #right
+        #     if not loopstack(stack, pos(self.ply.y, self.ply.x+1)):
+        #         if (self.maze[self.ply.y][self.ply.x+1] == " " and self.ply.x+1 != peek_x_back) or self.maze[self.ply.y][self.ply.x+1] == 'E':
+        #             stack.push(self.ply)
+        #             self.move_right()
+        # if htw == 3:
+        #     #up
+        #     if not loopstack(stack, pos(self.ply.y-1, self.ply.x)):      
+        #         if (self.maze[self.ply.y-1][self.ply.x] == " " and self.ply.y-1 != peek_y_back) or self.maze[self.ply.y-1][self.ply.x] == 'E':
+        #             stack.push(self.ply)
+        #             self.move_up()
+        #     #right
+        #     if not loopstack(stack, pos(self.ply.y, self.ply.x+1)):
+        #         if (self.maze[self.ply.y][self.ply.x+1] == " " and self.ply.x+1 != peek_x_back) or self.maze[self.ply.y][self.ply.x+1] == 'E':
+        #             stack.push(self.ply)
+        #             self.move_right()
+        #     #left
+        #     if not loopstack(stack, pos(self.ply.y, self.ply.x-1)):
+        #         if (self.maze[self.ply.y][self.ply.x-1] == " " and self.ply.x-1 != peek_x_back) or self.maze[self.ply.y][self.ply.x-1] == 'E':
+        #             stack.push(self.ply)
+        #             self.move_left() 
+        #     #down
+        #     if not loopstack(stack, pos(self.ply.y+1, self.ply.x)):
+        #         if (self.maze[self.ply.y+1][self.ply.x] == " " and self.ply.y+1 != peek_y_back) or self.maze[self.ply.y+1][self.ply.x] == 'E':
+        #             stack.push(self.ply)
+        #             self.move_down()
