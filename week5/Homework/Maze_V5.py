@@ -278,10 +278,10 @@ class maze:
         if self.maze[self.ply.y-1][self.ply.x] == " " and is_in_loopstack(stack_i, pos(self.ply.y-1, self.ply.x)) and is_in_loopstack(stack_O, pos(self.ply.y-1, self.ply.x)):
             stack_i.push(self.ply)
             self.move_up()
-        elif self.maze[self.ply.y][self.ply.x-1] == " " and is_in_loopstack(stack_i, pos(self.ply.y, self.ply.x-1)) and is_in_loopstack(stack_O, pos(self.ply, self.ply.x-1)):
+        elif self.maze[self.ply.y][self.ply.x-1] == " " and is_in_loopstack(stack_i, pos(self.ply.y, self.ply.x-1)) and is_in_loopstack(stack_O, pos(self.ply.y, self.ply.x-1)):
             stack_i.push(self.ply)
             self.move_left()
-        elif self.maze[self.ply.y][self.ply.x+1] == " " and is_in_loopstack(stack_i, pos(self.ply.y, self.ply.x+1)) and is_in_loopstack(stack_O, pos(self.ply, self.ply.x+1)):
+        elif self.maze[self.ply.y][self.ply.x+1] == " " and is_in_loopstack(stack_i, pos(self.ply.y, self.ply.x+1)) and is_in_loopstack(stack_O, pos(self.ply.y, self.ply.x+1)):
             stack_i.push(self.ply)
             self.move_right()
         elif self.maze[self.ply.y+1][self.ply.x] == " " and is_in_loopstack(stack_i, pos(self.ply.y+1, self.ply.x)) and is_in_loopstack(stack_O, pos(self.ply.y+1, self.ply.x)):
