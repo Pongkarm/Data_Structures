@@ -60,24 +60,24 @@ class maze:
         # self.ply = pos(0, 7)
         # self.end = pos(10, 1)
         self.maze = [
-                    ["X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
-                    ["X", " ", " ", " ", "X", " ", "X", " ", "X", " ", "X", " ", "X"],
-                    ["X", " ", "X", " ", " ", " ", "X", " ", "X", "X", "X", " ", "X"],
-                    ["X", " ", "X", " ", "X", " ", "X", " ", "X", "X", "X", " ", "X"],
-                    ["X", " ", "X", " ", "X", " ", " ", " ", " ", " ", "X", " ", "X"],
-                    ["X", " ", " ", " ", "X", " ", "X", " ", "X", "X", "X", " ", "X"],
-                    ["X", " ", "X", " ", "X", " ", "X", "X", "X", " ", "X", " ", "X"],
-                    ["X", "X", "X", " ", "X", " ", " ", " ", "X", " ", " ", " ", "X"],
-                    ["X", " ", "X", " ", "X", " ", "X", " ", "X", " ", "X", " ", "X"],
-                    ["X", " ", "X", " ", " ", " ", "X", " ", "X", " ", "X", " ", "X"],
-                    ["X", " ", "X", "X", "X", "X", "X", " ", "X", " ", "X", " ", "X"],
-                    ["X", " ", "X", " ", "X", " ", "X", " ", "X", " ", "X", " ", "X"],
-                    ["X", " ", " ", " ", " ", " ", " ", " ", " ", " ", "X", " ", "X"],
-                    ["X", " ", "X", "X", " ", "X", "X", " ", "X", " ", "X", " ", "X"],
-                    ["X", " ", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
+                    ["X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
+                    ["X", " ", " ", " ", "X", "X", " ", "X", " ", " ", " ", "X", " ", "X", "X"],
+                    ["X", " ", "X", " ", " ", " ", " ", "X", " ", "X", " ", "X", " ", " ", "X"],
+                    ["X", " ", "X", " ", "X", "X", " ", "X", " ", "X", "X", "X", " ", "X", "X"],
+                    ["X", " ", "X", " ", " ", "X", " ", " ", " ", " ", " ", "X", " ", " ", "X"],
+                    ["X", " ", " ", " ", "X", " ", " ", "X", " ", "X", "X", "X", " ", "X", "X"],
+                    ["X", " ", "X", " ", "X", "X", " ", "X", "X", "X", " ", "X", " ", " ", "X"],
+                    ["X", "X", "X", " ", " ", " ", " ", " ", " ", "X", " ", " ", " ", "X", "X"],
+                    ["X", " ", "X", " ", "X", "X", " ", "X", " ", "X", " ", "X", " ", " ", "X"],
+                    ["X", " ", " ", " ", " ", "X", " ", "X", " ", "X", " ", "X", " ", "X", "X"],
+                    ["X", " ", "X", " ", "X", "X", "X", "X", " ", "X", " ", "X", " ", " ", "X"],
+                    ["X", " ", "X", " ", "X", "X", "X", "X", " ", "X", " ", "X", " ", "X", "X"],
+                    ["X", " ", "X", " ", " ", " ", " ", " ", " ", " ", " ", "X", " ", " ", "X"],
+                    ["X", " ", "X", "X", " ", "X", "X", "X", " ", "X", " ", "X", " ", "X", "X"],
+                    ["X", " ", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "E", "X", "X"],
                     ]
         self.ply = pos(14, 1)
-        self.end = pos(0, 3)
+        self.end = pos(14, 12)
         # self.ply = pos(0, 3)
         # self.end = pos(14, 1)
         
@@ -217,7 +217,7 @@ class maze:
                 i += 1
             if not is_in_loopstack(stack_i, pos(self.ply.y+1, self.ply.x)) and is_in_loopstack(stack_O, pos(self.ply.y+1, self.ply.x)):
                 i += 1
-                
+            print('iiiii',i)
             if i > 1:
                 if not is_in_loopstack(stack_i, pos(self.ply.y-1, self.ply.x)) and is_in_loopstack(stack_O, pos(self.ply.y-1, self.ply.x)) and stack_i.peek().y == self.ply.y-1:
                     stack_O.push(self.ply)
@@ -246,6 +246,8 @@ class maze:
                     self.move_left()
                 elif not is_in_loopstack(stack_i, pos(self.ply.y, self.ply.x+1)) and is_in_loopstack(stack_O, pos(self.ply.y, self.ply.x+1)):
                     stack_O.push(self.ply)
+                    # print(self.ply.x, self.ply.y )
+                    print('right')
                     self.move_right()
                 elif not is_in_loopstack(stack_i, pos(self.ply.y+1, self.ply.x)) and is_in_loopstack(stack_O, pos(self.ply.y+1, self.ply.x)):
                     stack_O.push(self.ply)
@@ -278,10 +280,10 @@ class maze:
         if self.maze[self.ply.y-1][self.ply.x] == " " and is_in_loopstack(stack_i, pos(self.ply.y-1, self.ply.x)) and is_in_loopstack(stack_O, pos(self.ply.y-1, self.ply.x)):
             stack_i.push(self.ply)
             self.move_up()
-        elif self.maze[self.ply.y][self.ply.x-1] == " " and is_in_loopstack(stack_i, pos(self.ply.y, self.ply.x-1)) and is_in_loopstack(stack_O, pos(self.ply, self.ply.x-1)):
+        elif self.maze[self.ply.y][self.ply.x-1] == " " and is_in_loopstack(stack_i, pos(self.ply.y, self.ply.x-1)) and is_in_loopstack(stack_O, pos(self.ply.y, self.ply.x-1)):
             stack_i.push(self.ply)
             self.move_left()
-        elif self.maze[self.ply.y][self.ply.x+1] == " " and is_in_loopstack(stack_i, pos(self.ply.y, self.ply.x+1)) and is_in_loopstack(stack_O, pos(self.ply, self.ply.x+1)):
+        elif self.maze[self.ply.y][self.ply.x+1] == " " and is_in_loopstack(stack_i, pos(self.ply.y, self.ply.x+1)) and is_in_loopstack(stack_O, pos(self.ply.y, self.ply.x+1)):
             stack_i.push(self.ply)
             self.move_right()
         elif self.maze[self.ply.y+1][self.ply.x] == " " and is_in_loopstack(stack_i, pos(self.ply.y+1, self.ply.x)) and is_in_loopstack(stack_O, pos(self.ply.y+1, self.ply.x)):
@@ -289,7 +291,7 @@ class maze:
             self.move_down()
         else:
             print('มาได้ไง')
-                
+            time.sleep(9.1)
         return stack_i, stack_O
     def more_one_way(self, stack_i, stack_O):
         len_maze_x = len(self.maze[0])
@@ -374,7 +376,7 @@ if __name__ == '__main__':
         if stack_i.peek().x == 100 and stack_O.peek().x == 100:
             break
         pk.print()
-        time.sleep(.05)
+        time.sleep(.1)
 
 elapsed = timeit.default_timer() - start_time
 print(f"{elapsed} seconds")
