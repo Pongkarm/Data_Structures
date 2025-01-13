@@ -7,6 +7,10 @@ import time
 import keyboard
 from Stack import Stack
 from itertools import permutations
+import random
+import timeit
+
+start_time = timeit.default_timer()
 class maze:
     def __init__(self) -> None:
         # self.maze = [
@@ -57,26 +61,25 @@ class maze:
         #             ]
         # self.ply = pos(10, 1)
         # self.end = pos(0, 7)
-        
         self.maze = [
                     ["X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
-                    ["X", " ", " ", " ", "X", " ", "X", " ", " ", " ", "X", " ", "X"],
-                    ["X", " ", "X", " ", " ", " ", " ", " ", "X", " ", "X", " ", "X"],
-                    ["X", " ", "X", " ", "X", " ", "X", " ", "X", " ", " ", " ", "X"],
-                    ["X", " ", "X", " ", "X", " ", "X", "X", "X", "X", "X", " ", "X"],
                     ["X", " ", " ", " ", "X", " ", "X", " ", "X", " ", "X", " ", "X"],
-                    ["X", " ", "X", " ", "X", " ", "X", " ", " ", " ", "X", " ", "X"],
-                    ["X", "X", "X", " ", "X", " ", "X", " ", "X", " ", " ", " ", "X"],
+                    ["X", " ", "X", " ", " ", " ", "X", " ", "X", "X", "X", " ", "X"],
+                    ["X", " ", "X", " ", "X", " ", "X", " ", "X", "X", "X", " ", "X"],
+                    ["X", " ", "X", " ", "X", " ", " ", " ", " ", " ", "X", " ", "X"],
+                    ["X", " ", " ", " ", "X", " ", "X", " ", "X", "X", "X", " ", "X"],
+                    ["X", " ", "X", " ", "X", " ", "X", " ", "X", " ", "X", " ", "X"],
+                    ["X", "X", "X", " ", "X", " ", "X", "X", "X", " ", " ", " ", "X"],
                     ["X", " ", "X", " ", "X", " ", " ", " ", "X", " ", "X", " ", "X"],
                     ["X", " ", "X", " ", " ", " ", "X", " ", "X", " ", "X", " ", "X"],
-                    ["X", " ", "X", "X", "X", "X", "X", "X", "X", " ", "X", " ", "X"],
-                    ["X", " ", "X", " ", "X", " ", "X", "X", "X", " ", "X", " ", " "],
+                    ["X", " ", "X", "X", "X", "X", "X", " ", "X", " ", "X", " ", "X"],
+                    ["X", " ", "X", " ", "X", " ", "X", " ", "X", " ", "X", " ", " "],
                     ["X", " ", " ", " ", " ", " ", " ", " ", " ", " ", "X", " ", "X"],
                     ["X", " ", "X", "X", " ", "X", "X", " ", "X", " ", "X", " ", "X"],
                     ["X", " ", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
                     ]
         self.ply = pos(14, 1)
-        self.end = pos(11, 12)
+        self.end = pos(0, 7)
         self.maze[self.ply.y][self.ply.x] = "P"
         self.maze[self.end.y][self.end.x] = "E"
     #เช็คว่าอยู่ในบอร์ดอยู่หรือเปล่า
@@ -88,12 +91,12 @@ class maze:
     
     def print(self):
         os.system("cls")
-        print("\n\n\n")
+        print("\n")
         for row in self.maze:
             for col in row:
                 print(col," ", end="")
             print("")
-        print("\n\n\n")
+        print("\n")
     
     def printEND(self):
         os.system("cls")
@@ -111,7 +114,7 @@ class maze:
                 self.maze[self.ply.y][self.ply.x] = " "
                 self.maze[next_move.y][next_move.x] = "P"
                 self.ply = next_move
-                time.sleep(0.025)
+                time.sleep(0.000025)
         return True
     
     def move_down(self):
@@ -124,7 +127,7 @@ class maze:
                 self.maze[self.ply.y][self.ply.x] = " "
                 self.maze[next_move.y][next_move.x] = "P"
                 self.ply = next_move
-                time.sleep(0.025)
+                time.sleep(0.000025)
         return True
     def move_left(self):
         next_move = pos(self.ply.y, self.ply.x-1)
@@ -136,7 +139,7 @@ class maze:
                 self.maze[self.ply.y][self.ply.x] = " " #แทนที่ก่อนหน้าเป็นช่องว่าง
                 self.maze[next_move.y][next_move.x] = "P" #แทนที่ต่อไปด้วย P
                 self.ply = next_move #เซตค่าปัจจุบันเป็นข้างหน้า
-                time.sleep(0.025)
+                time.sleep(0.000025)
         return True
     def move_right(self):
         next_move = pos(self.ply.y, self.ply.x+1)
@@ -148,7 +151,7 @@ class maze:
                 self.maze[self.ply.y][self.ply.x] = " "
                 self.maze[next_move.y][next_move.x] = "P"
                 self.ply = next_move
-                time.sleep(0.025)
+                time.sleep(0.00025)
         return True
     def lookway(self, stack):
         way = 0
@@ -199,13 +202,22 @@ class maze:
             self.move_down() 
             
         return stack
-    def more_one_way(self, stack, htw):
+    def more_one_way(self, stack, htw, _random):
         peek_y_back = stack.peek().y
         peek_x_back = stack.peek().x
         now_y = self.ply.y
         now_x = self.ply.x
         if htw == 25:
-            htw = 99
+            while True:
+                a = random.randint(1, 24)
+                if a not in _random:
+                    htw = a
+                    _random.append(htw)
+                    break
+                if len(_random) >= 23:
+                    htw = 1
+                    _random = []
+                    break
             
         #คำสั่งวิเศษจะช่วยให้เราเปลี่ยนเส้นทางแบบทุกรูปแบบ 24 แบบ บน ซ้าย ขวา ล่าง, ล่าง ขวา ซ้าย บน...
         # choices = ['1', '2', '3', '4'] 
@@ -240,17 +252,17 @@ class maze:
             #รีเซตstack
             stack = popstackuntil_0(stack)
             htw += 1
-        return stack, htw
-    def go_to_way(self, way, stack, htw):
+        return stack, htw, _random
+    def go_to_way(self, way, stack, htw, _random):
         if way == 1:
             stack = self.one_way(stack)
         elif way >= 2:
-            stack, htw = self.more_one_way(stack, htw)
+            stack, htw, _random = self.more_one_way(stack, htw, _random)
         elif way == 0:
             stack.pop()
             stack.push(pos(0,0))
 
-        return stack, htw
+        return stack, htw, _random
 def checkStack(stack):
     temp_stack = Stack()
     kong = []
@@ -289,6 +301,8 @@ if __name__ == '__main__':
     stack = Stack() # Stackในครั้งนี้เราจะเก็บจุด x,y ของก่อนทางแยก และเก็บทางที่เราพึ่งจะเดินทางมา สองเงื่อนไขเท่านั้น
     print('Press Enter to start')
     htw = 1 #วิธีการมองและเดิน
+    
+    _random = []
     while True:
         if keyboard.is_pressed("enter"):
             pk.print()
@@ -299,19 +313,24 @@ if __name__ == '__main__':
             print("Quit Program")
             break
         way = pk.lookway(stack)
-        stack, htw = pk.go_to_way(way, stack, htw)
-        if htw > 99:
-            break
+        stack, htw, _random = pk.go_to_way(way, stack, htw, _random)
         pk.print()
         kong = checkStack(stack)
         #เช็คดูข้อมูลในstack
         # for i in kong:
         #     print(i.y ,i.x)
         #     print(htw)
-        time.sleep(0.04)
-    if htw > 99:
-        print('แผนที่นี้ไม่มีทางออก')
+        print(htw)
+        print(_random)
+        print(len(_random))
+        time.sleep(0.00004)
+    #     if htw > 99:
+    #         break
+    # if htw > 99:
+    #     print('แผนที่นี้ไม่มีทางออก')
 
+elapsed = timeit.default_timer() - start_time
+print(f"{elapsed} seconds")
 #เวอร์ชั่นนี้แก้จาก maze3 
 #maze3 มีบัคทีตัวเราไม่ย้อนกลับไปเวลาเจอทางตันทั้งหมด(ไม่ผ่านแยกที่เคยผ่านมาแล้ว)
 #เวอร์ชั่นนี้จึงแก้โดยการเมื่อเจอทางตันทุกทางแล้วจะให้ลบข้อมูลทางที่มาหมดและเปลี่ยนวิธีการเดิน
