@@ -518,3 +518,102 @@ self.maze = [
             ["X", " ", "X", "X", " ", "X", "X", " ", "X", " ", "X", " ", "X"],
             ["X", " ", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
             ]
+
+
+
+
+            # i = 0
+            # if not is_in_loopstack(stack_i, pos(self.ply.y-1, self.ply.x)) and is_in_loopstack(stack_O, pos(self.ply.y-1, self.ply.x)):
+            #     i += 1
+            # if not is_in_loopstack(stack_i, pos(self.ply.y, self.ply.x-1)) and is_in_loopstack(stack_O, pos(self.ply.y, self.ply.x-1)):
+            #     i += 1
+            # if not is_in_loopstack(stack_i, pos(self.ply.y, self.ply.x+1)) and is_in_loopstack(stack_O, pos(self.ply.y, self.ply.x+1)):
+            #     i += 1
+            # if not is_in_loopstack(stack_i, pos(self.ply.y+1, self.ply.x)) and is_in_loopstack(stack_O, pos(self.ply.y+1, self.ply.x)):
+            #     i += 1
+            # print(i,'jjjjjjjjjjjjjjjjj')
+            # if i > 1:
+            #     stack_i.push(self.ply)
+            #     if not is_in_loopstack(stack_i, pos(self.ply.y-1, self.ply.x)) and is_in_loopstack(stack_O, pos(self.ply.y-1, self.ply.x)) and stack_i.peek().y != self.ply.y-1:
+            #         self.move_up()
+            #     elif not is_in_loopstack(stack_i, pos(self.ply.y, self.ply.x-1)) and is_in_loopstack(stack_O, pos(self.ply.y, self.ply.x-1)) and stack_i.peek().x != self.ply.x-1:
+            #         self.move_left()
+            #     elif not is_in_loopstack(stack_i, pos(self.ply.y, self.ply.x+1)) and is_in_loopstack(stack_O, pos(self.ply.y, self.ply.x+1)) and stack_i.peek().x != self.ply.x+1:
+            #         self.move_right()
+            #     elif not is_in_loopstack(stack_i, pos(self.ply.y+1, self.ply.x)) and is_in_loopstack(stack_O, pos(self.ply.y+1, self.ply.x)) and stack_i.peek().y != self.ply.y+1:
+            #         self.move_down()
+            #     stack_O.push(self.ply)
+            # elif i <= 1:
+            #     stack_O.push(self.ply)
+            #     if not is_in_loopstack(stack_i, pos(self.ply.y-1, self.ply.x)) and is_in_loopstack(stack_O, pos(self.ply.y-1, self.ply.x)):
+            #         # stack_O.push(self.ply)
+            #         self.move_up()
+            #     elif not is_in_loopstack(stack_i, pos(self.ply.y, self.ply.x-1)) and is_in_loopstack(stack_O, pos(self.ply.y, self.ply.x-1)):
+            #         # stack_O.push(self.ply)
+            #         self.move_left()
+            #     elif not is_in_loopstack(stack_i, pos(self.ply.y, self.ply.x+1)) and is_in_loopstack(stack_O, pos(self.ply.y, self.ply.x+1)):
+            #         # stack_O.push(self.ply)
+            #         self.move_right()
+            #     elif not is_in_loopstack(stack_i, pos(self.ply.y+1, self.ply.x)) and is_in_loopstack(stack_O, pos(self.ply.y+1, self.ply.x)):
+            #         # stack_O.push(self.ply)
+            #         self.move_down()
+            
+                        # #up
+            # if not is_in_loopstack(stack_i, pos(self.ply.y-1, self.ply.x)) and is_in_loopstack(stack_O, pos(self.ply.y-1, self.ply.x)):
+            #     stack_O.push(self.ply)
+            #     self.move_up()
+            # #left
+            # elif not is_in_loopstack(stack_i, pos(self.ply.y, self.ply.x-1)) and is_in_loopstack(stack_O, pos(self.ply.y, self.ply.x-1)):
+            #     stack_O.push(self.ply)
+            #     print('whatt')
+            #     self.move_left()
+            # #right
+            # elif not is_in_loopstack(stack_i, pos(self.ply.y, self.ply.x+1)) and is_in_loopstack(stack_O, pos(self.ply.y, self.ply.x+1)):
+            #     stack_O.push(self.ply)
+            #     self.move_right()
+            # #down
+            # elif not is_in_loopstack(stack_i, pos(self.ply.y+1, self.ply.x)) and is_in_loopstack(stack_O, pos(self.ply.y+1, self.ply.x)):
+            #     stack_O.push(self.ply)
+            #     self.move_down()
+            
+            # else:
+                # if not is_in_loopstack(stack_O, pos(self.ply.y-1, self.ply.x)):
+                #     self.move_up()
+                # #left
+                # elif not is_in_loopstack(stack_O, pos(self.ply, self.ply.x-1)):
+                #     self.move_left()
+                # #right
+                # elif not is_in_loopstack(stack_O, pos(self.ply, self.ply.x+1)):
+                #     self.move_right()
+                # #down
+                # elif not is_in_loopstack(stack_O, pos(self.ply.y+1, self.ply.x)):
+                #     self.move_down()
+                # print('เข้า o')
+                
+                
+                            # if not is_in_loopstack(stack_i, pos(self.ply.y-1, self.ply.x)) and stack_i.peek().y != self.ply.y-1:
+            #     # stack_O.push(self.ply)
+            #     self.move_up()
+            # elif not is_in_loopstack(stack_i, pos(self.ply.y, self.ply.x-1)) and stack_i.peek().x != self.ply.x-1:
+            #     # stack_O.push(self.ply)
+            #     self.move_left()
+            # elif not is_in_loopstack(stack_i, pos(self.ply.y, self.ply.x+1)) and stack_i.peek().x != self.ply.x+1:
+            #     # stack_O.push(self.ply)
+            #     self.move_right()
+            # elif not is_in_loopstack(stack_i, pos(self.ply.y+1, self.ply.x)) and stack_i.peek().y != self.ply.y+1:
+            #     # stack_O.push(self.ply)
+            #     self.move_down()
+            # else:
+                # if is_in_loopstack(stack_i, pos(self.ply.y-1, self.ply.x)):
+                #     stack_O.push(self.ply)
+                #     self.move_up()
+                # elif is_in_loopstack(stack_i, pos(self.ply.y, self.ply.x-1)):
+                #     stack_O.push(self.ply)
+                #     self.move_left()
+                # elif is_in_loopstack(stack_i, pos(self.ply.y, self.ply.x+1)):
+                #     stack_O.push(self.ply)
+                #     self.move_right()
+                # elif is_in_loopstack(stack_i, pos(self.ply.y+1, self.ply.x)):
+                #     stack_O.push(self.ply)
+                #     self.move_down()
+                # print('งง')
