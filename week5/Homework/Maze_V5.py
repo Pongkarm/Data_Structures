@@ -392,7 +392,6 @@ if __name__ == '__main__':
         stack_i, stack_O = pk.go_to_way(way, stack_i, stack_O)
         if stack_i.peek().x == 100 and stack_O.peek().x == 100:
             break
-        pk.print()
         time.sleep(.05)
 
 elapsed = timeit.default_timer() - start_time
