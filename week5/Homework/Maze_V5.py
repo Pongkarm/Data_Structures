@@ -104,7 +104,6 @@ class maze:
         print("\n\n\n")
         print(">>>>> Congraturation!!! <<<<<")
         print("\n\n\n")
-        keyboard.wait("")
     def printNOEND(self):
         print("\n\n\n")
         print(">>>>> There is no way out <<<<<")
@@ -112,9 +111,6 @@ class maze:
     def move_up(self):
         next_move = pos(self.ply.y-1, self.ply.x)
         if self.isInBound(next_move.y,next_move.x):
-            if self.maze[next_move.y][next_move.x] == "E":
-                self.printEND()
-                return False
             if self.maze[next_move.y][next_move.x] != "X":
                 self.maze[self.ply.y][self.ply.x] = " "
                 self.maze[next_move.y][next_move.x] = "P"
@@ -125,9 +121,6 @@ class maze:
     def move_down(self):
         next_move = pos(self.ply.y+1, self.ply.x)
         if self.isInBound(next_move.y,next_move.x):
-            if self.maze[next_move.y][next_move.x] == "E":
-                self.printEND()
-                return False
             if self.maze[next_move.y][next_move.x] != "X":
                 self.maze[self.ply.y][self.ply.x] = " "
                 self.maze[next_move.y][next_move.x] = "P"
@@ -137,9 +130,6 @@ class maze:
     def move_left(self):
         next_move = pos(self.ply.y, self.ply.x-1)
         if self.isInBound(next_move.y,next_move.x): #ถ้าเป็นจริง
-            if self.maze[next_move.y][next_move.x] == "E":
-                self.printEND()
-                return False
             if self.maze[next_move.y][next_move.x] != "X": #ถ้าช่องต่อไปว่าง
                 self.maze[self.ply.y][self.ply.x] = " " #แทนที่ก่อนหน้าเป็นช่องว่าง
                 self.maze[next_move.y][next_move.x] = "P" #แทนที่ต่อไปด้วย P
@@ -149,9 +139,6 @@ class maze:
     def move_right(self):
         next_move = pos(self.ply.y, self.ply.x+1)
         if self.isInBound(next_move.y,next_move.x):
-            if self.maze[next_move.y][next_move.x] == "E":
-                self.printEND()
-                return False
             if self.maze[next_move.y][next_move.x] != "X":
                 self.maze[self.ply.y][self.ply.x] = " "
                 self.maze[next_move.y][next_move.x] = "P"
@@ -265,15 +252,31 @@ class maze:
         if self.ply.y-1 >= 0:
             if self.maze[self.ply.y-1][self.ply.x] == "E":
                 self.move_up()
+                self.printEND()
+                stack_i.push(pos(100, 100))
+                stack_O.push(pos(100, 100))
+                return stack_i, stack_O
         if self.ply.x-1 >= 0:
             if self.maze[self.ply.y][self.ply.x-1] == "E":
                 self.move_left()
+                self.printEND()
+                stack_i.push(pos(100, 100))
+                stack_O.push(pos(100, 100))
+                return stack_i, stack_O
         if self.ply.x < len_maze_x-1:    
             if self.maze[self.ply.y][self.ply.x+1] == "E":
                 self.move_right()
+                self.printEND()
+                stack_i.push(pos(100, 100))
+                stack_O.push(pos(100, 100))
+                return stack_i, stack_O
         if self.ply.y < len_maze_y-1:
             if self.maze[self.ply.y+1][self.ply.x] == "E":
                 self.move_down()
+                self.printEND()
+                stack_i.push(pos(100, 100))
+                stack_O.push(pos(100, 100))
+                return stack_i, stack_O
         #หาทางว่างก่อนเป็นอันดับที่สอง และเป็นทางที่ไม่เคยไปมาก่อน
         if self.maze[self.ply.y-1][self.ply.x] == " " and is_in_loopstack(stack_i, pos(self.ply.y-1, self.ply.x)) and is_in_loopstack(stack_O, pos(self.ply.y-1, self.ply.x)):
             stack_i.push(self.ply)
@@ -299,15 +302,31 @@ class maze:
         if self.ply.y-1 >= 0:
             if self.maze[self.ply.y-1][self.ply.x] == "E":
                 self.move_up()
+                self.printEND()
+                stack_i.push(pos(100, 100))
+                stack_O.push(pos(100, 100))
+                return stack_i, stack_O
         if self.ply.x-1 >= 0:
             if self.maze[self.ply.y][self.ply.x-1] == "E":
                 self.move_left()
+                self.printEND()
+                stack_i.push(pos(100, 100))
+                stack_O.push(pos(100, 100))
+                return stack_i, stack_O
         if self.ply.x < len_maze_x-1:    
             if self.maze[self.ply.y][self.ply.x+1] == "E":
                 self.move_right()
+                self.printEND()
+                stack_i.push(pos(100, 100))
+                stack_O.push(pos(100, 100))
+                return stack_i, stack_O
         if self.ply.y < len_maze_y-1:
             if self.maze[self.ply.y+1][self.ply.x] == "E":
                 self.move_down()
+                self.printEND()
+                stack_i.push(pos(100, 100))
+                stack_O.push(pos(100, 100))
+                return stack_i, stack_O
         #หาทางว่างก่อนเป็นอันดับที่สอง และเป็นทางที่ไม่เคยไปมาก่อน
         if self.maze[self.ply.y-1][self.ply.x] == " " and  is_in_loopstack(stack_i, pos(self.ply.y-1, self.ply.x)) and  is_in_loopstack(stack_O, pos(self.ply.y-1, self.ply.x)):
             stack_i.push(self.ply)
@@ -383,9 +402,6 @@ print(f"{elapsed} seconds")
 
 #ก็โปรเจคนี้ใช้เวลาประมาณ 2 อาทิตเลยนะกว่าจะได้สมบูรณ์แบบนี้กว่าจะออกมาได้ซัดไป 5 version เลย
 #รวมหัวสมองอันน้อยนิดระหว่าง programmer ดรัณภพ(6710301007) และ อภิสักก์ (6710301009)
-#ถามว่ามีถามแชท GPT ไหม ก็มีนะแค่ 2 แบบคือ 
-# ถามแนวคิดฟั่งก์ชั่น loopstack (line 374)
-# def checkStack (line 333)
 #ที่เหลือนอกจากนี้คิดเองหมดสดสด ถ้าเป็นไปได้เราก็ไม่อยากใช้แชทไง
 #ก็ขออวยพรให้ทุกคนอ่านโค้ดพวกเราด้วยความสนุกและไม่งงนะบั๊ยบายย ^-^
 #ปล.ใครไม่เชื่อว่าเขียนเองให้ไปถาม อภิสักก์ (6710301009)ได้เลย ถามโค้ดส่วนไหนก็ได้เขาจะอธิบายให้คุณฟังได้
