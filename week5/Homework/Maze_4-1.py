@@ -1,19 +1,12 @@
 #Maze
 #6710301007
 #6710301009
-<<<<<<< HEAD
-
-=======
 # ออกเขาวงกตแบบไม่ทำสัญลักษณ์ (ส่งครู)
->>>>>>> c15229dbe1db3b9a027e2ded8aa02cec52e12029
 import os
 import time
 import keyboard
 from Stack import Stack
-<<<<<<< HEAD
-
-=======
->>>>>>> c15229dbe1db3b9a027e2ded8aa02cec52e12029
+from itertools import permutations
 class maze:
     def __init__(self) -> None:
         # self.maze = [
@@ -28,33 +21,23 @@ class maze:
         # self.end = pos(2, 6)
         # self.end = pos(5, 1)
         # # self.ply = pos(2, 6)
-        self.maze = [
-                    ["X", "X", "X", "X", "X", "X", "X"],
-                    ["X", " ", " ", " ", "X", " ", "X"],
-                    ["X", " ", "X", " ", "X", " ", "X"],
-                    ["X", " ", "X", " ", "X", " ", "X"],
-                    ["X", " ", "X", " ", " ", " ", "X"],
-<<<<<<< HEAD
-                    ["X", " ", "X", " ", "X", " ", " "],
-=======
-                    ["X", " ", "X", " ", "X", " ", "X"],
->>>>>>> c15229dbe1db3b9a027e2ded8aa02cec52e12029
-                    ["X", " ", "X", " ", "X", " ", "X"],
-                    ["X", "X", "X", " ", "X", " ", "X"],
-                    ["X", " ", " ", " ", "X", " ", "X"],
-                    ["X", " ", "X", " ", "X", " ", "X"],
-<<<<<<< HEAD
-                    ["X", " ", "X", "X", "X", "X", "X"],
-                    ]
-        self.ply = pos(10, 1)
-        self.end = pos(5, 6)
-=======
-                    ["X", " ", "X", "E", "X", "X", "X"],
-                    ]
-        self.ply = pos(10, 1)
-        self.end = pos(5, 6)
+        # self.maze = [
+        #             ["X", "X", "X", "X", "X", "X", "X"],
+        #             ["X", " ", " ", " ", "X", " ", "X"],
+        #             ["X", " ", "X", " ", "X", " ", "X"],
+        #             ["X", " ", "X", " ", "X", " ", "X"],
+        #             ["X", " ", "X", " ", "X", " ", "X"],
+        #             ["X", " ", "X", " ", " ", " ", "X"],
+        #             ["X", " ", "X", " ", "X", " ", "X"],
+        #             ["X", "X", "X", " ", "X", " ", "X"],
+        #             ["X", " ", " ", " ", "X", " ", "X"],
+        #             ["X", " ", "X", " ", "X", " ", "X"],
+        #             ["X", " ", "X", "X", "X", "X", "X"],
+        #             ]
+        # self.ply = pos(10, 1)
+        # self.end = pos(5, 6)
         # self.end = pos(10, 3)
->>>>>>> c15229dbe1db3b9a027e2ded8aa02cec52e12029
+        # self.end = pos(10, 5)
         # self.end = pos(10, 1)
         # self.ply = pos(5, 6)
         # self.maze = [
@@ -72,39 +55,25 @@ class maze:
         #             ]
         # self.ply = pos(10, 1)
         # self.end = pos(0, 7)
-        # self.maze = [
-<<<<<<< HEAD
-        #             ["X", "X", "X", "X", "X", "X", "X", " ", "X"],
-        #             ["X", " ", " ", " ", "X", " ", "X", " ", "X"],
-        #             ["X", " ", "X", " ", " ", " ", "X", " ", "X"],
-        #             ["X", " ", "X", " ", "X", " ", "X", " ", "X"],
-        #             ["X", " ", "X", " ", "X", " ", "X", " ", "X"],
-        #             ["X", " ", " ", " ", "X", " ", "X", " ", "X"],
-        #             ["X", " ", "X", " ", "X", " ", "X", " ", "X"],
-        #             ["X", "X", "X", " ", "X", " ", "X", " ", "X"],
-        #             ["X", " ", "X", " ", "X", " ", " ", " ", "X"],
-        #             ["X", " ", " ", " ", " ", " ", "X", " ", "X"],
-        #             ["X", " ", "X", "X", "X", "X", "X", "X", "X"],
-=======
-        #             ["X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
-        #             ["X", " ", " ", " ", "X", " ", "X", " ", "X", " ", "X", " ", "X"],
-        #             ["X", " ", "X", " ", " ", " ", "X", " ", "X", " ", "X", " ", "X"],
-        #             ["X", " ", "X", " ", "X", " ", "X", " ", "X", " ", "X", " ", "X"],
-        #             ["X", " ", "X", " ", "X", " ", "X", " ", "X", " ", "X", " ", "X"],
-        #             ["X", " ", " ", " ", "X", " ", "X", " ", "X", " ", "X", " ", "X"],
-        #             ["X", " ", "X", " ", "X", " ", "X", " ", "X", " ", "X", " ", "X"],
-        #             ["X", "X", "X", " ", "X", " ", "X", " ", "X", " ", "X", " ", "X"],
-        #             ["X", " ", "X", " ", "X", " ", " ", " ", "X", " ", "X", " ", "X"],
-        #             ["X", " ", "X", " ", " ", " ", "X", " ", "X", " ", "X", " ", "X"],
-        #             ["X", " ", "X", "X", "X", "X", "X", "X", "X", " ", "X", " ", "X"],
-        #             ["X", " ", "X", " ", " ", " ", "X", "X", "X", " ", "X", " ", "X"],
-        #             ["X", " ", " ", " ", " ", " ", "X", " ", "X", " ", "X", " ", "X"],
-        #             ["X", " ", "X", "X", " ", " ", "X", " ", "X", " ", "X", " ", "X"],
-        #             ["X", " ", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
->>>>>>> c15229dbe1db3b9a027e2ded8aa02cec52e12029
-        #             ]
-        # self.ply = pos(10, 1)
-        # self.end = pos(0, 7)
+        self.maze = [
+                    ["X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
+                    ["X", " ", " ", " ", "X", " ", "X", " ", "X", " ", "X", " ", "X"],
+                    ["X", " ", "X", " ", " ", " ", "X", " ", "X", "X", "X", " ", "X"],
+                    ["X", " ", "X", " ", "X", " ", "X", " ", "X", "X", "X", " ", "X"],
+                    ["X", " ", "X", " ", "X", " ", " ", " ", " ", " ", "X", " ", "X"],
+                    ["X", " ", " ", " ", "X", " ", "X", " ", "X", "X", "X", " ", "X"],
+                    ["X", " ", "X", " ", "X", " ", "X", " ", "X", " ", "X", " ", "X"],
+                    ["X", "X", "X", " ", "X", " ", "X", "X", "X", " ", " ", " ", "X"],
+                    ["X", " ", "X", " ", "X", " ", " ", " ", "X", " ", "X", " ", "X"],
+                    ["X", " ", "X", " ", " ", " ", "X", " ", "X", " ", "X", " ", "X"],
+                    ["X", " ", "X", "X", "X", "X", "X", " ", "X", " ", "X", " ", "X"],
+                    ["X", " ", "X", " ", "X", " ", "X", " ", "X", " ", "X", " ", " "],
+                    ["X", " ", " ", " ", " ", " ", " ", " ", " ", " ", "X", " ", "X"],
+                    ["X", " ", "X", "X", " ", "X", "X", " ", "X", " ", "X", " ", "X"],
+                    ["X", " ", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
+                    ]
+        self.ply = pos(14, 1)
+        self.end = pos(11, 12)
         self.maze[self.ply.y][self.ply.x] = "P"
         self.maze[self.end.y][self.end.x] = "E"
     #เช็คว่าอยู่ในบอร์ดอยู่หรือเปล่า
@@ -129,10 +98,6 @@ class maze:
         print(">>>>> Congraturation!!! <<<<<")
         print("\n\n\n")
         keyboard.wait("")
-<<<<<<< HEAD
-
-=======
->>>>>>> c15229dbe1db3b9a027e2ded8aa02cec52e12029
     def move_up(self):
         next_move = pos(self.ply.y-1, self.ply.x)
         if self.isInBound(next_move.y,next_move.x):
@@ -143,7 +108,7 @@ class maze:
                 self.maze[self.ply.y][self.ply.x] = " "
                 self.maze[next_move.y][next_move.x] = "P"
                 self.ply = next_move
-                time.sleep(0.25)
+                time.sleep(0.025)
         return True
     
     def move_down(self):
@@ -156,12 +121,8 @@ class maze:
                 self.maze[self.ply.y][self.ply.x] = " "
                 self.maze[next_move.y][next_move.x] = "P"
                 self.ply = next_move
-                time.sleep(0.25)
+                time.sleep(0.025)
         return True
-<<<<<<< HEAD
-
-=======
->>>>>>> c15229dbe1db3b9a027e2ded8aa02cec52e12029
     def move_left(self):
         next_move = pos(self.ply.y, self.ply.x-1)
         if self.isInBound(next_move.y,next_move.x): #ถ้าเป็นจริง
@@ -172,12 +133,8 @@ class maze:
                 self.maze[self.ply.y][self.ply.x] = " " #แทนที่ก่อนหน้าเป็นช่องว่าง
                 self.maze[next_move.y][next_move.x] = "P" #แทนที่ต่อไปด้วย P
                 self.ply = next_move #เซตค่าปัจจุบันเป็นข้างหน้า
-                time.sleep(0.25)
+                time.sleep(0.025)
         return True
-<<<<<<< HEAD
-
-=======
->>>>>>> c15229dbe1db3b9a027e2ded8aa02cec52e12029
     def move_right(self):
         next_move = pos(self.ply.y, self.ply.x+1)
         if self.isInBound(next_move.y,next_move.x):
@@ -188,12 +145,8 @@ class maze:
                 self.maze[self.ply.y][self.ply.x] = " "
                 self.maze[next_move.y][next_move.x] = "P"
                 self.ply = next_move
-                time.sleep(0.25)
+                time.sleep(0.025)
         return True
-<<<<<<< HEAD
-
-=======
->>>>>>> c15229dbe1db3b9a027e2ded8aa02cec52e12029
     def lookway(self, stack):
         way = 0
         len_maze_x = len(self.maze[0])
@@ -216,10 +169,6 @@ class maze:
         if ply_y < len_maze_y-1: 
             if (self.maze[self.ply.y+1][self.ply.x] == " " and self.ply.y+1 != stack.peek().y) or self.maze[self.ply.y+1][self.ply.x] == "E":
                 way += 1
-<<<<<<< HEAD
-
-=======
->>>>>>> c15229dbe1db3b9a027e2ded8aa02cec52e12029
                            
         return way
     def one_way(self, stack):
@@ -244,71 +193,97 @@ class maze:
             stack.pop()
             stack.push(self.ply)
             self.move_down() 
-<<<<<<< HEAD
-
-=======
->>>>>>> c15229dbe1db3b9a027e2ded8aa02cec52e12029
             
         return stack
-    def two_way(self, stack):
+    def two_way(self, stack, htw):
         peek_y_back = stack.peek().y
         peek_x_back = stack.peek().x
-<<<<<<< HEAD
-        kong = checkStack(stack)
-        #up
-        if self.maze[self.ply.y-1][self.ply.x] != "X" and (i.y != self.ply.y-1 for i in kong) and self.ply.y-1 != peek_y_back:
-            stack.push(self.ply)
-            self.move_up()
-        #left
-        elif self.maze[self.ply.y][self.ply.x-1] != "X" and (i.x != self.ply.x-1 for i in kong) and self.ply.x-1 != peek_x_back:
-            stack.push(self.ply)
-            self.move_left() 
-        #right
-        elif self.maze[self.ply.y][self.ply.x+1] != "X" and (i.x != self.ply.x+1 for i in kong) and self.ply.x+1 != peek_x_back:
-            stack.push(self.ply)
-            self.move_right()
-        #down
-        elif self.maze[self.ply.y+1][self.ply.x] != "X" and (i.y != self.ply.y+1 for i in kong) and self.ply.y+1 != peek_y_back:
-            stack.push(self.ply)
-            self.move_down() 
-=======
-        #up
-        if not loopstack(stack, pos(self.ply.y-1, self.ply.x)):      
-            if (self.maze[self.ply.y-1][self.ply.x] == " " and self.ply.y-1 != peek_y_back) or self.maze[self.ply.y-1][self.ply.x] == 'E':
-                stack.push(self.ply)
-                self.move_up()
-        #left
-        if not loopstack(stack, pos(self.ply.y, self.ply.x-1)):
-            if (self.maze[self.ply.y][self.ply.x-1] == " " and self.ply.x-1 != peek_x_back) or self.maze[self.ply.y][self.ply.x-1] == 'E':
-                stack.push(self.ply)
-                self.move_left() 
-        #right
-        if not loopstack(stack, pos(self.ply.y, self.ply.x+1)):
-            if (self.maze[self.ply.y][self.ply.x+1] == " " and self.ply.x+1 != peek_x_back) or self.maze[self.ply.y][self.ply.x+1] == 'E':
-                stack.push(self.ply)
-                self.move_right()
-        #down
-        if not loopstack(stack, pos(self.ply.y+1, self.ply.x)):
-            if (self.maze[self.ply.y+1][self.ply.x] == " " and self.ply.y+1 != peek_y_back) or self.maze[self.ply.y+1][self.ply.x] == 'E':
-                stack.push(self.ply)
-                self.move_down()    
->>>>>>> c15229dbe1db3b9a027e2ded8aa02cec52e12029
-        return stack
-    def go_to_way(self, way, stack):
-        #มี 1 ทางที่ไปได้
+        now_y = self.ply.y
+        now_x = self.ply.x
+        if htw == 4:
+            htw = 99
+        
+        if htw == 1:
+            #up
+            if not loopstack(stack, pos(self.ply.y-1, self.ply.x)):      
+                if (self.maze[self.ply.y-1][self.ply.x] == " " and self.ply.y-1 != peek_y_back) or self.maze[self.ply.y-1][self.ply.x] == 'E':
+                    stack.push(self.ply)
+                    self.move_up()
+            #left
+            if not loopstack(stack, pos(self.ply.y, self.ply.x-1)):
+                if (self.maze[self.ply.y][self.ply.x-1] == " " and self.ply.x-1 != peek_x_back) or self.maze[self.ply.y][self.ply.x-1] == 'E':
+                    stack.push(self.ply)
+                    self.move_left() 
+            #right
+            if not loopstack(stack, pos(self.ply.y, self.ply.x+1)):
+                if (self.maze[self.ply.y][self.ply.x+1] == " " and self.ply.x+1 != peek_x_back) or self.maze[self.ply.y][self.ply.x+1] == 'E':
+                    stack.push(self.ply)
+                    self.move_right()
+            #down
+            if not loopstack(stack, pos(self.ply.y+1, self.ply.x)):
+                if (self.maze[self.ply.y+1][self.ply.x] == " " and self.ply.y+1 != peek_y_back) or self.maze[self.ply.y+1][self.ply.x] == 'E':
+                    stack.push(self.ply)
+                    self.move_down()
+        if htw == 2:
+            #down
+            if not loopstack(stack, pos(self.ply.y+1, self.ply.x)):
+                if (self.maze[self.ply.y+1][self.ply.x] == " " and self.ply.y+1 != peek_y_back) or self.maze[self.ply.y+1][self.ply.x] == 'E':
+                    stack.push(self.ply)
+                    self.move_down()
+            #up
+            if not loopstack(stack, pos(self.ply.y-1, self.ply.x)):      
+                if (self.maze[self.ply.y-1][self.ply.x] == " " and self.ply.y-1 != peek_y_back) or self.maze[self.ply.y-1][self.ply.x] == 'E':
+                    stack.push(self.ply)
+                    self.move_up()
+            #left
+            if not loopstack(stack, pos(self.ply.y, self.ply.x-1)):
+                if (self.maze[self.ply.y][self.ply.x-1] == " " and self.ply.x-1 != peek_x_back) or self.maze[self.ply.y][self.ply.x-1] == 'E':
+                    stack.push(self.ply)
+                    self.move_left() 
+            #right
+            if not loopstack(stack, pos(self.ply.y, self.ply.x+1)):
+                if (self.maze[self.ply.y][self.ply.x+1] == " " and self.ply.x+1 != peek_x_back) or self.maze[self.ply.y][self.ply.x+1] == 'E':
+                    stack.push(self.ply)
+                    self.move_right()
+        if htw == 3:
+            #up
+            if not loopstack(stack, pos(self.ply.y-1, self.ply.x)):      
+                if (self.maze[self.ply.y-1][self.ply.x] == " " and self.ply.y-1 != peek_y_back) or self.maze[self.ply.y-1][self.ply.x] == 'E':
+                    stack.push(self.ply)
+                    self.move_up()
+            #right
+            if not loopstack(stack, pos(self.ply.y, self.ply.x+1)):
+                if (self.maze[self.ply.y][self.ply.x+1] == " " and self.ply.x+1 != peek_x_back) or self.maze[self.ply.y][self.ply.x+1] == 'E':
+                    stack.push(self.ply)
+                    self.move_right()
+            #left
+            if not loopstack(stack, pos(self.ply.y, self.ply.x-1)):
+                if (self.maze[self.ply.y][self.ply.x-1] == " " and self.ply.x-1 != peek_x_back) or self.maze[self.ply.y][self.ply.x-1] == 'E':
+                    stack.push(self.ply)
+                    self.move_left() 
+            #down
+            if not loopstack(stack, pos(self.ply.y+1, self.ply.x)):
+                if (self.maze[self.ply.y+1][self.ply.x] == " " and self.ply.y+1 != peek_y_back) or self.maze[self.ply.y+1][self.ply.x] == 'E':
+                    stack.push(self.ply)
+                    self.move_down()
+
+
+        # เมื่อเจอทางตัน
+        if now_y == self.ply.y and now_x == self.ply.x:
+            stack = popstackuntil_0(stack)
+            htw += 1
+        return stack, htw
+    def go_to_way(self, way, stack, htw):
+        
         if way == 1:
             stack = self.one_way(stack)
         elif way >= 2:
-            stack = self.two_way(stack)
+            stack, htw = self.two_way(stack, htw)
         elif way == 0:
             stack.pop()
-<<<<<<< HEAD
-            # stack.push(pos(0,0))
-        return stack
-=======
             stack.push(pos(0,0))
-        return stack 
->>>>>>> c15229dbe1db3b9a027e2ded8aa02cec52e12029
+
+        return stack, htw
 def checkStack(stack):
     temp_stack = Stack()
     kong = []
@@ -317,39 +292,35 @@ def checkStack(stack):
         top = stack.peek()  # อ่านค่าด้านบนสุด
         kong.append(top)
         temp_stack.push(stack.pop())  # เก็บข้อมูลชั่วคราว
-<<<<<<< HEAD
-
-=======
->>>>>>> c15229dbe1db3b9a027e2ded8aa02cec52e12029
     # คืนค่าข้อมูลกลับไปยัง stack เดิม
     while not temp_stack.isEmpty():
         stack.push(temp_stack.pop())
     return kong
-<<<<<<< HEAD
-=======
 
 def loopstack(stack, pos):
     for pos_in_stack in checkStack(stack):
         if pos.x == pos_in_stack.x and pos.y == pos_in_stack.y:
            return True
     return False
->>>>>>> c15229dbe1db3b9a027e2ded8aa02cec52e12029
+def popstackuntil_0(stack):
+        try:
+            while stack:
+               stack.pop()
+        except:
+            return stack
+        stack.push(pos(0,0)) 
+        return stack
+    
 class pos: 
     def __init__(self, y=None, x=None):
         self.y = y
         self.x = x
-<<<<<<< HEAD
-
 #ออกด้วยวิธีการทำสัญลักษณ์บนแผนที่
 if __name__ == '__main__':
-
-=======
-#ออกด้วยวิธีการทำสัญลักษณ์บนแผนที่
-if __name__ == '__main__':
->>>>>>> c15229dbe1db3b9a027e2ded8aa02cec52e12029
     pk = maze()
     stack = Stack()
     print('Press Enter to start')
+    htw = 1 #วิธีการมองและเดิน
     while True:
         if keyboard.is_pressed("enter"):
             pk.print()
@@ -360,20 +331,16 @@ if __name__ == '__main__':
             print("Quit Program")
             break
         way = pk.lookway(stack)
-        stack = pk.go_to_way(way, stack)
+        stack, htw = pk.go_to_way(way, stack, htw)
+        if htw > 99:
+            break
         pk.print()
-<<<<<<< HEAD
-        time.sleep(0.04)
-
-#Bug fixes looking first way
-#bug ถ้าเจอทางแยกมากกว่า 3ทางแก็ไม่ได้
-#bug ทางวนซ้ายออกไม่ได้
-#bug ทางตันระยะไกล้ (<1ช่อง)
-
-=======
         kong = checkStack(stack)
-        for i in kong:
-            print(i.y ,i.x)
+        # for i in kong:
+        #     print(i.y ,i.x)
+        #     print(htw)
         time.sleep(0.04)
+    if htw > 99:
+        print('แผนที่นี้ไม่มีทางออก')
 
->>>>>>> c15229dbe1db3b9a027e2ded8aa02cec52e12029
+#เวอร์ชั่นนี้ เป็นรุ่นก่อน maze4 จะลองแค่ 3 แบบการเดินต่างจาก maze4 ที่ลอง 24 ทาง

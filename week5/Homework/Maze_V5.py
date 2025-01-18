@@ -59,6 +59,7 @@ class maze:
         # self.end = pos(0, 7)
         # self.ply = pos(0, 7)
         # self.end = pos(10, 1)
+<<<<<<< HEAD
         # self.maze = [
         #             ["X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
         #             ["X", " ", " ", " ", "X", " ", "X", " ", "X", " ", "X", " ", "X"],
@@ -108,6 +109,29 @@ class maze:
                     ]
         self.ply = pos(1, 0)
         self.end = pos(0, 1)
+=======
+        self.maze = [
+                    ["X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
+                    ["X", " ", " ", " ", "X", " ", "X", " ", "X", " ", "X", " ", "X"],
+                    ["X", " ", "X", " ", " ", " ", "X", " ", "X", "X", "X", " ", "X"],
+                    ["X", " ", "X", " ", "X", " ", "X", " ", "X", "X", "X", " ", "X"],
+                    ["X", " ", "X", " ", "X", " ", " ", " ", " ", " ", "X", " ", "X"],
+                    ["X", " ", " ", " ", "X", " ", "X", " ", "X", "X", "X", " ", "X"],
+                    ["X", " ", "X", " ", "X", " ", "X", "X", "X", " ", "X", " ", "X"],
+                    ["X", "X", "X", " ", "X", " ", " ", " ", "X", " ", " ", " ", "X"],
+                    ["X", " ", "X", " ", "X", " ", "X", " ", "X", " ", "X", " ", "X"],
+                    ["X", " ", "X", " ", " ", " ", "X", " ", "X", " ", "X", " ", "X"],
+                    ["X", " ", "X", "X", "X", "X", "X", " ", "X", " ", "X", " ", "X"],
+                    ["X", " ", "X", " ", "X", " ", "X", " ", "X", " ", "X", " ", "X"],
+                    ["X", " ", " ", " ", " ", " ", " ", " ", " ", " ", "X", " ", "X"],
+                    ["X", " ", "X", "X", " ", "X", "X", " ", "X", " ", "X", " ", "X"],
+                    ["X", " ", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
+                    ]
+        self.ply = pos(14, 1)
+        self.end = pos(0, 3)
+        # self.ply = pos(0, 3)
+        # self.end = pos(14, 1)
+>>>>>>> c15229dbe1db3b9a027e2ded8aa02cec52e12029
         
         self.maze[self.ply.y][self.ply.x] = "P"
         self.maze[self.end.y][self.end.x] = "E"
@@ -420,8 +444,12 @@ if __name__ == '__main__':
         stack_i, stack_O = pk.go_to_way(way, stack_i, stack_O)
         if stack_i.peek().x == 100 and stack_O.peek().x == 100:
             break
+<<<<<<< HEAD
         pk.print()
         time.sleep(0.05)
+=======
+        time.sleep(.05)
+>>>>>>> c15229dbe1db3b9a027e2ded8aa02cec52e12029
 
 elapsed = timeit.default_timer() - start_time
 print(f"{elapsed} seconds")
@@ -435,4 +463,8 @@ print(f"{elapsed} seconds")
 #ปล.ใครไม่เชื่อว่าเขียนเองให้ไปถาม อภิสักก์ (6710301009)ได้เลย ถามโค้ดส่วนไหนก็ได้เขาจะอธิบายให้คุณฟังได้
 
 #ถ้ามีบัคอะไรแจ้งได้นะครับ issues ไว้ได้เลย
+<<<<<<< HEAD
 # https://github.com/Pongkarm/Data_Structures/issues
+=======
+# https://github.com/Pongkarm/Data_Structures/issues
+>>>>>>> c15229dbe1db3b9a027e2ded8aa02cec52e12029
