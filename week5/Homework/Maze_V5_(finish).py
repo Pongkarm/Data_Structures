@@ -205,7 +205,7 @@ class maze:
         ply_x = self.ply.x
         ply_y = self.ply.y
         #up
-        if ply_y-1 >= 0:  #ต้องไม่ให้น้อบกว่า 0
+        if ply_y-1 >= 0:  #ต้องไม่ให้น้อบกว่า 0 เพราะจะเกินแมพ
             if self.maze[self.ply.y-1][self.ply.x] == "E":
                 way = 1
                 return way
@@ -345,6 +345,7 @@ class maze:
         else:
             print('มาได้ไง')
                 
+                
         return stack_i, stack_O
     def more_one_way(self, stack_i, stack_O):
         len_maze_x = len(self.maze[0])
@@ -440,7 +441,7 @@ if __name__ == '__main__':
             print("Quit Program")
             break
         way = pk.lookway(stack_i, stack_O)
-        print(way)
+        pk.print()
         stack_i, stack_O = pk.go_to_way(way, stack_i, stack_O)
         if stack_i.peek().x == 100 and stack_O.peek().x == 100:
             break
