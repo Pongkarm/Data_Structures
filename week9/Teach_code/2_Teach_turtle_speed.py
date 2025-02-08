@@ -9,3 +9,4 @@ for _ in range(4):  # ทำซ้ำ 4 รอบ
     t.right(90)  
 
 turtle.done()
+
