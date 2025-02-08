@@ -9,7 +9,7 @@ class Maze:
         rows_in_maze = 0
         columns_in_maze = 0
         self.maze_list = []
-        maze_file = open(maze_file_name,'r')
+        maze_file = open(f'week9/homework/{maze_file_name}','r')
         rows_in_maze = 0
         for line in maze_file:
             row_list = []
@@ -114,9 +114,30 @@ def search_from(maze, start_row, start_column):
         maze.update_position(start_row, start_column, DEAD_END)
         return found
 
-my_maze = Maze('maze2.txt')
+# def search_from(maze, start_row, start_column):
+# try each of four directions from this point until we find a
+    # way out.
+    # base Case return values:
+    # 1. We have run into an obstacle, return false
+    # maze.update_position(start_row, start_column)
+    # if maze[start_row-1][start_column] != OBSTACLE :
+    #     maze.update_position(start_row-1, start_column, TRIED)
+    # elif maze[start_row+1][start_column] != OBSTACLE :
+    #     maze.update_position(start_row+1, start_column, TRIED)
+    # elif maze[start_row][start_column-1] != OBSTACLE :
+    #     maze.update_position(start_row, start_column-1, TRIED)
+    # elif maze[start_row][start_column+1] != OBSTACLE :
+    #     maze.update_position(start_row, start_column+1, TRIED)
+    # else:
+    #     return False
+
+my_maze = Maze('maze1.txt')
 my_maze.draw_maze()
 my_maze.update_position(my_maze.start_row, my_maze.start_col)
 search_from(my_maze, my_maze.start_row, my_maze.start_col)
-
+# while True:
+#     pk = search_from(my_maze, my_maze.start_row, my_maze.start_col)
+#     if pk:
+#         break
+print('out')
 
