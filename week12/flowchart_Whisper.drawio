@@ -1,0 +1,326 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 OPR/116.0.0.0" version="26.0.16">
+  <diagram name="Page-1" id="IDfR5r8LUMfTRaYuUhKE">
+    <mxGraphModel dx="2482" dy="785" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="uSDcJzuN3soXK7VAa02k-15" value="ใช่" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="uSDcJzuN3soXK7VAa02k-1" target="uSDcJzuN3soXK7VAa02k-14" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="uSDcJzuN3soXK7VAa02k-1" value="เข้าห้องเสื้อผ้าเกิน&lt;div&gt;&amp;nbsp;10 ครั้งไหม?&lt;/div&gt;" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.decision;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="-56.25" y="210" width="132.5" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="uSDcJzuN3soXK7VAa02k-4" value="End" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="-45.25" y="2190" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="uSDcJzuN3soXK7VAa02k-8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" target="uSDcJzuN3soXK7VAa02k-7" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="10" y="80" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uSDcJzuN3soXK7VAa02k-11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="uSDcJzuN3soXK7VAa02k-7" target="uSDcJzuN3soXK7VAa02k-1" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="uSDcJzuN3soXK7VAa02k-7" value="เข้าห้องเสื้อผ้า" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="-60" y="120" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="uSDcJzuN3soXK7VAa02k-10" value="Start" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.start_1;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="-40" y="20" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="uSDcJzuN3soXK7VAa02k-14" value="Bad end1&lt;div&gt;หุ่นเชิด&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="-360" y="245" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="uSDcJzuN3soXK7VAa02k-23" value="ใช่" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="uSDcJzuN3soXK7VAa02k-17" target="uSDcJzuN3soXK7VAa02k-25" edge="1">
+          <mxGeometry x="-0.1847" relative="1" as="geometry">
+            <mxPoint x="90" y="410" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="1ZfE2ZHqK8PGb9SZGu6e-6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="uSDcJzuN3soXK7VAa02k-17" target="1ZfE2ZHqK8PGb9SZGu6e-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1ZfE2ZHqK8PGb9SZGu6e-15" value="ไม่" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="1ZfE2ZHqK8PGb9SZGu6e-6">
+          <mxGeometry x="-0.76" y="-1" relative="1" as="geometry">
+            <mxPoint y="3" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uSDcJzuN3soXK7VAa02k-17" value="เข้าห้องอื่นๆเกิน&lt;div&gt;&amp;nbsp;10 ครั้งไหม?&lt;/div&gt;" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.decision;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="280" y="350" width="132.5" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="uSDcJzuN3soXK7VAa02k-18" value="ไม่" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="uSDcJzuN3soXK7VAa02k-1" target="uSDcJzuN3soXK7VAa02k-17" edge="1">
+          <mxGeometry x="-0.3812" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uSDcJzuN3soXK7VAa02k-28" value="ใช่" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="uSDcJzuN3soXK7VAa02k-24" target="uSDcJzuN3soXK7VAa02k-27" edge="1">
+          <mxGeometry x="-0.2074" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uSDcJzuN3soXK7VAa02k-31" value="ไม่" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="uSDcJzuN3soXK7VAa02k-24" target="uSDcJzuN3soXK7VAa02k-29" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="uSDcJzuN3soXK7VAa02k-24" value="&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;กินยาสองขวดพร้อม&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;กันหรือไม่?&lt;/span&gt;&lt;/div&gt;" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.decision;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="277" y="890" width="132.5" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="uSDcJzuN3soXK7VAa02k-102" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="uSDcJzuN3soXK7VAa02k-25" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-300" y="409.9999999999998" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uSDcJzuN3soXK7VAa02k-25" value="Bad end2&lt;div&gt;เปลือนอกไร้วิญญาณ&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="-56.25" y="385" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="uSDcJzuN3soXK7VAa02k-103" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="uSDcJzuN3soXK7VAa02k-27" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-304" y="949.9999999999998" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uSDcJzuN3soXK7VAa02k-27" value="Bad end3&lt;div&gt;ความลังเล&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="-60.25" y="925" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="uSDcJzuN3soXK7VAa02k-32" value="ใช่" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1.004;entryY=0.614;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="uSDcJzuN3soXK7VAa02k-29" target="uSDcJzuN3soXK7VAa02k-33" edge="1">
+          <mxGeometry x="-0.1853" relative="1" as="geometry">
+            <mxPoint x="126" y="1120" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uSDcJzuN3soXK7VAa02k-36" value="ไม่" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="uSDcJzuN3soXK7VAa02k-29" target="uSDcJzuN3soXK7VAa02k-35" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="uSDcJzuN3soXK7VAa02k-29" value="&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;กินยาสีฟ้าหรือไม่?&lt;/span&gt;&lt;/div&gt;" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.decision;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="277" y="1060" width="132.5" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="uSDcJzuN3soXK7VAa02k-113" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="uSDcJzuN3soXK7VAa02k-33" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-304" y="1115" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uSDcJzuN3soXK7VAa02k-33" value="Bad end&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;???&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;ความพ่ายแพ้&lt;/span&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="-60.25" y="1090" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="uSDcJzuN3soXK7VAa02k-34" value="&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;แพ้บอสเฟสที่ 1&lt;/span&gt;&lt;/div&gt;" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.decision;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="278.88" y="1340" width="132.5" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="uSDcJzuN3soXK7VAa02k-35" value="ต่อสู้บอส" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="277" y="1240" width="136.25" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="uSDcJzuN3soXK7VAa02k-37" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="uSDcJzuN3soXK7VAa02k-35" target="uSDcJzuN3soXK7VAa02k-34" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="uSDcJzuN3soXK7VAa02k-71" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="336" y="1210" as="targetPoint" />
+            <mxPoint x="-124" y="1490" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="-224" y="1490" />
+              <mxPoint x="-224" y="1210" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uSDcJzuN3soXK7VAa02k-72" value="ไม่" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="uSDcJzuN3soXK7VAa02k-71" vertex="1" connectable="0">
+          <mxGeometry x="-0.8405" y="-1" relative="1" as="geometry">
+            <mxPoint x="25" y="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uSDcJzuN3soXK7VAa02k-82" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="uSDcJzuN3soXK7VAa02k-38" target="uSDcJzuN3soXK7VAa02k-44" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="uSDcJzuN3soXK7VAa02k-86" value="ใช่" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="uSDcJzuN3soXK7VAa02k-82" vertex="1" connectable="0">
+          <mxGeometry x="-0.2547" relative="1" as="geometry">
+            <mxPoint x="-2" y="-82" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uSDcJzuN3soXK7VAa02k-38" value="แพ้ครบ 3 ครั้งแล้ว?" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.decision;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="-124" y="1430" width="132.5" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="uSDcJzuN3soXK7VAa02k-104" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="uSDcJzuN3soXK7VAa02k-44" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-304" y="1965" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uSDcJzuN3soXK7VAa02k-44" value="Bad end4&lt;div&gt;จุดจบ&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="-127.75" y="1940" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="uSDcJzuN3soXK7VAa02k-47" value="&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;แพ้บอสเฟสที่ 2&lt;/span&gt;&lt;/div&gt;" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.decision;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="280.75" y="1510" width="132.5" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="uSDcJzuN3soXK7VAa02k-49" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="uSDcJzuN3soXK7VAa02k-34" target="uSDcJzuN3soXK7VAa02k-47" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="uSDcJzuN3soXK7VAa02k-51" value="ไม่" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="uSDcJzuN3soXK7VAa02k-49" vertex="1" connectable="0">
+          <mxGeometry x="-0.171" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uSDcJzuN3soXK7VAa02k-89" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="uSDcJzuN3soXK7VAa02k-50" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-54" y="1870" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="196" y="1740" />
+              <mxPoint x="196" y="1870" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uSDcJzuN3soXK7VAa02k-90" value="ใช่" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="uSDcJzuN3soXK7VAa02k-89" vertex="1" connectable="0">
+          <mxGeometry x="-0.8583" y="-3" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uSDcJzuN3soXK7VAa02k-95" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="uSDcJzuN3soXK7VAa02k-50" target="uSDcJzuN3soXK7VAa02k-91" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="uSDcJzuN3soXK7VAa02k-100" value="ไม่" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="uSDcJzuN3soXK7VAa02k-95" vertex="1" connectable="0">
+          <mxGeometry x="-0.3933" y="-2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uSDcJzuN3soXK7VAa02k-50" value="&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;แพ้บอสเฟสที่ 3&lt;/span&gt;&lt;/div&gt;" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.decision;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="280.75" y="1680" width="132.5" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="uSDcJzuN3soXK7VAa02k-52" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="uSDcJzuN3soXK7VAa02k-47" target="uSDcJzuN3soXK7VAa02k-50" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="uSDcJzuN3soXK7VAa02k-53" value="ไม่" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="uSDcJzuN3soXK7VAa02k-52" vertex="1" connectable="0">
+          <mxGeometry x="-0.0745" y="2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uSDcJzuN3soXK7VAa02k-84" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="uSDcJzuN3soXK7VAa02k-74" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="336" y="1479.9999999999998" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="16" y="1650" />
+              <mxPoint x="16" y="1480" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uSDcJzuN3soXK7VAa02k-85" value="ไม่" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="uSDcJzuN3soXK7VAa02k-84" vertex="1" connectable="0">
+          <mxGeometry x="-0.9371" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uSDcJzuN3soXK7VAa02k-87" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="uSDcJzuN3soXK7VAa02k-74" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-54" y="1759.9999999999998" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="122" y="1760" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uSDcJzuN3soXK7VAa02k-88" value="ใช่" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="uSDcJzuN3soXK7VAa02k-87" vertex="1" connectable="0">
+          <mxGeometry x="-0.8217" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uSDcJzuN3soXK7VAa02k-74" value="แพ้ครบ 3 ครั้งแล้ว?" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.decision;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="56" y="1590" width="132.5" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="uSDcJzuN3soXK7VAa02k-77" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="uSDcJzuN3soXK7VAa02k-34" target="uSDcJzuN3soXK7VAa02k-38" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="uSDcJzuN3soXK7VAa02k-79" value="ใช่" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="uSDcJzuN3soXK7VAa02k-77" vertex="1" connectable="0">
+          <mxGeometry x="-0.4927" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uSDcJzuN3soXK7VAa02k-80" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="uSDcJzuN3soXK7VAa02k-47" target="uSDcJzuN3soXK7VAa02k-74" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="uSDcJzuN3soXK7VAa02k-83" value="ใช่" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="uSDcJzuN3soXK7VAa02k-80" vertex="1" connectable="0">
+          <mxGeometry x="-0.4779" y="-1" relative="1" as="geometry">
+            <mxPoint y="-1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uSDcJzuN3soXK7VAa02k-111" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="15.630000000000003" y="2100" as="targetPoint" />
+            <mxPoint x="345.9100000000001" y="1970" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="345.88" y="2100" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uSDcJzuN3soXK7VAa02k-91" value="Normal end&lt;div&gt;การเดินทาง&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="277" y="1940" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="uSDcJzuN3soXK7VAa02k-96" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="uSDcJzuN3soXK7VAa02k-14" target="uSDcJzuN3soXK7VAa02k-109" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-10" y="1900" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="-305" y="2100" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uSDcJzuN3soXK7VAa02k-109" value="" style="verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.flowchart.on-page_reference;" parent="1" vertex="1">
+          <mxGeometry x="-5.249999999999998" y="2090" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="uSDcJzuN3soXK7VAa02k-112" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="uSDcJzuN3soXK7VAa02k-109" target="uSDcJzuN3soXK7VAa02k-4" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="uSDcJzuN3soXK7VAa02k-122" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="uSDcJzuN3soXK7VAa02k-114" target="uSDcJzuN3soXK7VAa02k-121" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="uSDcJzuN3soXK7VAa02k-123" value="ใช่" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="uSDcJzuN3soXK7VAa02k-122" vertex="1" connectable="0">
+          <mxGeometry x="-0.0917" y="-1" relative="1" as="geometry">
+            <mxPoint x="11" y="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uSDcJzuN3soXK7VAa02k-114" value="โกหกฟรีเรนไหม?" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.decision;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="277" y="740" width="132.5" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="uSDcJzuN3soXK7VAa02k-118" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="uSDcJzuN3soXK7VAa02k-114" target="uSDcJzuN3soXK7VAa02k-24" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1ZfE2ZHqK8PGb9SZGu6e-14" value="ไม่" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="uSDcJzuN3soXK7VAa02k-118">
+          <mxGeometry x="-0.7333" y="-2" relative="1" as="geometry">
+            <mxPoint y="6" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uSDcJzuN3soXK7VAa02k-124" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="uSDcJzuN3soXK7VAa02k-121" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="340" y="640" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="-168" y="800" />
+              <mxPoint x="-168" y="640" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uSDcJzuN3soXK7VAa02k-121" value="Bad end&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;???&lt;/span&gt;&lt;div&gt;วัฏจักรไร้สิ้นสุด&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="-63.75000000000001" y="775" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="1ZfE2ZHqK8PGb9SZGu6e-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="1ZfE2ZHqK8PGb9SZGu6e-1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="20" y="100" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="500" y="560" />
+              <mxPoint x="500" y="100" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="1ZfE2ZHqK8PGb9SZGu6e-11" value="ไม่" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="1ZfE2ZHqK8PGb9SZGu6e-10">
+          <mxGeometry x="-0.9484" y="-1" relative="1" as="geometry">
+            <mxPoint x="11" y="-1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="1ZfE2ZHqK8PGb9SZGu6e-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="1ZfE2ZHqK8PGb9SZGu6e-1" target="1ZfE2ZHqK8PGb9SZGu6e-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1ZfE2ZHqK8PGb9SZGu6e-13" value="ใช่" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="1ZfE2ZHqK8PGb9SZGu6e-12">
+          <mxGeometry x="-0.2626" y="3" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="1ZfE2ZHqK8PGb9SZGu6e-1" value="เก็บกระดาษครบ&lt;div&gt;3 แผ่นไหม?&lt;/div&gt;" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.decision;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="280" y="500" width="132.5" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="1ZfE2ZHqK8PGb9SZGu6e-3" value="ไปหาฟรีเรนที่ห้องหนังสือ" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="277" y="660" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="1ZfE2ZHqK8PGb9SZGu6e-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="1ZfE2ZHqK8PGb9SZGu6e-3" target="uSDcJzuN3soXK7VAa02k-114">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
